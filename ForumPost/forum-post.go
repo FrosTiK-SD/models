@@ -1,11 +1,11 @@
 package forumpost
 
 import (
-	"go.mongodb.org/mongo-driver/bson/primitive"
 	company "github.com/FrosTiK-SD/models-go/company"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
-type CompanyProfile {
+type CompanyProfile struct {
 	Company company.Company
 }
 
