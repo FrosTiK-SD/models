@@ -1,4 +1,4 @@
-package forumpost
+package forum
 
 import (
 	company "github.com/FrosTiK-SD/models-go/company"
@@ -23,7 +23,7 @@ type ForumPost struct {
 	Tags             []string
 	RelatedCompanies []CompanyProfile
 	RelatedStudents  []primitive.ObjectID
-	Content          string
+	Content          ForumPostContent
 	Pinned           int
 
 	// metadata
@@ -31,4 +31,9 @@ type ForumPost struct {
 	EditedBy  []primitive.ObjectID
 	CreatedAt primitive.DateTime
 	UpdatedAt primitive.DateTime
+}
+
+type ForumPostContent struct {
+	Type ForumPostContentType
+	Data interface{}
 }
