@@ -6,3 +6,4 @@ This repository contains all the models used by your golang code.
 ```bash
 git config --global url.git@github.com:.insteadOf https://github.com/
 ```
+3. Add `GOPRIVATE=github.com/FrosTiK-SD/` to your environment
