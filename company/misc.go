@@ -1,6 +1,7 @@
 package company
 
 import (
+	misc "github.com/FrosTiK-SD/models-go/misc"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
@@ -35,16 +36,10 @@ type MedicalDetails struct {
 	Others          string `json:"others" bson:"others"`
 }
 
-type DBRef struct {
-	Ref string             `bson:"$ref" json:"$ref"`
-	ID  primitive.ObjectID `bson:"$id" json:"$id"`
-	DB  string             `bson:"$db" json:"$db"`
-}
-
 type StudentApplication struct {
-	StudentID  DBRef
-	ResumeID   DBRef
-	AppliedFor DBRef
+	StudentID  misc.DBRef
+	ResumeID   misc.DBRef
+	AppliedFor misc.DBRef
 }
 
 type Group struct {
