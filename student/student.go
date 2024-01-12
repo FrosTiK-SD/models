@@ -34,24 +34,25 @@ type Student struct {
 	MotherTongue     string               `json:"motherTongue" bson:"motherTongue"`
 	EducationGap     string               `json:"educationGap" bson:"educationGap"`
 	JeeRank          string               `json:"jeeRank" bson:"jeeRank"`
-	Cgpa             float64              `json:"cgpa" bson:"cgpa"`
+	Cgpa             float32              `json:"cgpa" bson:"cgpa"`
 	ActiveBacklogs   int                  `json:"activeBacklogs" bson:"activeBacklogs"`
 	TotalBacklogs    int                  `json:"totalBacklogs" bson:"totalBacklogs"`
 	XBoard           string               `json:"xBoard" bson:"xBoard"`
 	XYear            string               `json:"xYear" bson:"xYear"`
-	XPercentage      float64              `json:"xPercentage" bson:"xPercentage"`
+	XPercentage      float32              `json:"xPercentage" bson:"xPercentage"`
 	XInstitute       string               `json:"xInstitute" bson:"xInstitute"`
 	XiiBoard         string               `json:"xiiBoard" bson:"xiiBoard"`
 	XiiYear          string               `json:"xiiYear" bson:"xiiYear"`
-	XiiPercentage    float64              `json:"xiiPercentage" bson:"xiiPercentage"`
+	XiiPercentage    float32              `json:"xiiPercentage" bson:"xiiPercentage"`
 	XiiInstitute     string               `json:"xiiInstitute" bson:"xiiInstitute"`
-	SemesterOne      float64              `json:"semesterOne" bson:"semesterOne"`
-	SemesterTwo      float64              `json:"semesterTwo" bson:"semesterTwo"`
-	SemesterThree    float64              `json:"semesterThree" bson:"semesterThree"`
-	SemesterFour     float64              `json:"semesterFour" bson:"semesterFour"`
-	SemesterFive     float64              `json:"semesterFive" bson:"semesterFive"`
-	SemesterSix      float64              `json:"semesterSix" bson:"semesterSix"`
-	UpdatedAt        string               `json:"updatedAt" bson:"updatedAt"`
+	SemesterOne      float32              `json:"semesterOne" bson:"semesterOne"`
+	SemesterTwo      float32              `json:"semesterTwo" bson:"semesterTwo"`
+	SemesterThree    float32              `json:"semesterThree" bson:"semesterThree"`
+	SemesterFour     float32              `json:"semesterFour" bson:"semesterFour"`
+	SemesterFive     float32              `json:"semesterFive" bson:"semesterFive"`
+	SemesterSix      float32              `json:"semesterSix" bson:"semesterSix"`
+	UpdatedAt        primitive.DateTime   `json:"updatedAt" bson:"updatedAt"`
+	CreatedAt        primitive.DateTime   `json:"createdAt" bson:"createdAt"`
 }
 
 type StudentPopulated struct {
@@ -80,24 +81,25 @@ type StudentPopulated struct {
 	MotherTongue     string             `json:"motherTongue" bson:"motherTongue"`
 	EducationGap     string             `json:"educationGap" bson:"educationGap"`
 	JeeRank          string             `json:"jeeRank" bson:"jeeRank"`
-	Cgpa             float64            `json:"cgpa" bson:"cgpa"`
+	Cgpa             float32            `json:"cgpa" bson:"cgpa"`
 	ActiveBacklogs   int                `json:"activeBacklogs" bson:"activeBacklogs"`
 	TotalBacklogs    int                `json:"totalBacklogs" bson:"totalBacklogs"`
 	XBoard           string             `json:"xBoard" bson:"xBoard"`
 	XYear            string             `json:"xYear" bson:"xYear"`
-	XPercentage      float64            `json:"xPercentage" bson:"xPercentage"`
+	XPercentage      float32            `json:"xPercentage" bson:"xPercentage"`
 	XInstitute       string             `json:"xInstitute" bson:"xInstitute"`
 	XiiBoard         string             `json:"xiiBoard" bson:"xiiBoard"`
 	XiiYear          string             `json:"xiiYear" bson:"xiiYear"`
-	XiiPercentage    float64            `json:"xiiPercentage" bson:"xiiPercentage"`
+	XiiPercentage    float32            `json:"xiiPercentage" bson:"xiiPercentage"`
 	XiiInstitute     string             `json:"xiiInstitute" bson:"xiiInstitute"`
-	SemesterOne      float64            `json:"semesterOne" bson:"semesterOne"`
-	SemesterTwo      float64            `json:"semesterTwo" bson:"semesterTwo"`
-	SemesterThree    float64            `json:"semesterThree" bson:"semesterThree"`
-	SemesterFour     float64            `json:"semesterFour" bson:"semesterFour"`
-	SemesterFive     float64            `json:"semesterFive" bson:"semesterFive"`
-	SemesterSix      float64            `json:"semesterSix" bson:"semesterSix"`
+	SemesterOne      float32            `json:"semesterOne" bson:"semesterOne"`
+	SemesterTwo      float32            `json:"semesterTwo" bson:"semesterTwo"`
+	SemesterThree    float32            `json:"semesterThree" bson:"semesterThree"`
+	SemesterFour     float32            `json:"semesterFour" bson:"semesterFour"`
+	SemesterFive     float32            `json:"semesterFive" bson:"semesterFive"`
+	SemesterSix      float32            `json:"semesterSix" bson:"semesterSix"`
 	Groups           []group.Group      `json:"groups" bson:"groups"`
-	UpdatedAt        string             `json:"updatedAt" bson:"updatedAt"`
+	UpdatedAt        primitive.DateTime `json:"updatedAt" bson:"updatedAt"`
+	CreatedAt        primitive.DateTime `json:"createdAt" bson:"createdAt"`
 	CompaniesAlloted []string           `json:"companiesAlloted" bson:"companiesAlloted"`
 }
