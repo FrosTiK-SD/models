@@ -1,60 +1,29 @@
 package placement
 
 import (
-	"github.com/FrosTiK-SD/models-go/company"
+	"github.com/FrosTiK-SD/models-go/resume"
 	"github.com/FrosTiK-SD/models-go/student"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
-type Listing string
-type OpportunityType string
-type Gender string
-
-const (
-	LISTED             Listing = "listed"
-	UNLISTED           Listing = "unlisted"
-	UNDER_BRANCH_ISSUE Listing = "under_branch_issue"
-	CLOSED             Listing = "closed"
-)
-
-const (
-	PLACEMENT OpportunityType = "placement"
-	INTERN    OpportunityType = "intern"
-)
-
-const (
-	MALE         Gender = "male"
-	FEMALE       Gender = "female"
-	OTHER_GENDER Gender = "other"
-)
-
-type Opportunity struct {
-	Company         company.Company
-	Profile         string
-	Criteria        company.EligibilityCriteria
-	DetailRequested map[string]interface{} // formbuilder
-
-	OpportunityStartTime primitive.DateTime
-	OpportunityEndTime   primitive.DateTime
-	Mode                 Listing
-	OpportunityType      OpportunityType
-}
-
 type Application struct {
-	Opportunity Opportunity
-	Student     student.Student
-	// Resume           Resume
-	DetailsRequested map[string]interface{}
+	ID               primitive.ObjectID `json:"id,omitempty"`
+	Opportunity      primitive.ObjectID `json:"opportunity,omitempty"`
+	Student          primitive.ObjectID `json:"student,omitempty"`
+	Resume           primitive.ObjectID `json:"resume,omitempty"`
+	DetailsRequested []DetailsRequested `json:"details_requested,omitempty"`
 }
 
-type Criteria struct {
-	Xth           float32
-	Xiith         float32
-	CGPA          float32
-	Branch        []string
-	Course        []string
-	ActiveBacklog int
-	TotalBacklog  int
-	Gender        Gender
-	Disability    bool
+type ApplicationPopulated struct {
+	ID               primitive.ObjectID   `json:"id,omitempty"`
+	Opportunity      OpportunityPopulated `json:"opportunity,omitempty"`
+	Student          student.Student      `json:"student,omitempty"`
+	Resume           resume.Resume        `json:"resume,omitempty"`
+	DetailsRequested []DetailsRequested   `json:"details_requested,omitempty"`
+}
+
+type DetailsRequested struct {
+	Key   string `json:"key,omitempty"`
+	Type  string `json:"type,omitempty"`
+	Value string `json:"value,omitempty"`
 }
