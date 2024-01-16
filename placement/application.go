@@ -12,7 +12,9 @@ type Gender string
 
 const (
 	LISTED             Listing = "listed"
+	UNLISTED           Listing = "unlisted"
 	UNDER_BRANCH_ISSUE Listing = "under_branch_issue"
+	CLOSED             Listing = "closed"
 )
 
 const (
