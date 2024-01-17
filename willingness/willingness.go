@@ -5,6 +5,7 @@ import (
 )
 
 type ShortList struct {
+	ID       primitive.ObjectID   `bson:"_id,omitempty" json:"_id,omitempty"`
 	Profile  primitive.ObjectID   `bson:"profile,omitempty"`
 	Type     string               `bson:"type,omitempty"`
 	Students []primitive.ObjectID `bson:"student_list,omitempty"`

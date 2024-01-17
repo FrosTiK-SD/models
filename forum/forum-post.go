@@ -28,7 +28,7 @@ type ForumPost struct {
 	Tags             []string           `bson:"tags,omitempty" json:"tags,omitempty"`
 	RelatedCompanies []CompanyProfile   `bson:"related_companies,omitempty" json:"related_companies,omitempty"`
 	// RelatedStudents  []primitive.ObjectID `bson:"related_students,omitempty" json:"related_students,omitempty"`
-	Notify  NotifyForum        `bson:"notify,omitempty"`
+	Notify  NotifyForum        `bson:"notify,omitempty" json:"notify,omitempty"`
 	Content []ForumPostContent `bson:"content,omitempty" json:"content,omitempty"`
 	Pinned  int                `bson:"pinned,omitempty" json:"pinned,omitempty"`
 
@@ -45,7 +45,7 @@ type ForumPost struct {
 // }
 
 type ForumPostContent struct {
-	TopGenericContent    string             `bson:"top_generic_content,omitempty"`
-	BottomGenericContent string             `bson:"bottom_generic_content,omitempty"`
-	StudentList          primitive.ObjectID `bson:"student_list"`
+	TopGenericContent    string             `bson:"top_generic_content,omitempty" json:"top_generic_content,omitempty"`
+	BottomGenericContent string             `bson:"bottom_generic_content,omitempty" json:"bottom_generic_content,omitempty"`
+	StudentList          primitive.ObjectID `bson:"student_list" json:"student_list"`
 }
