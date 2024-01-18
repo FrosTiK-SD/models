@@ -17,20 +17,19 @@ type NotificationGroups struct {
 }
 
 type NotifyForum struct {
-	StudentList []int    `bson:"student_list,omitempty"`
-	GroupsForum []string `bson:"groups_forum,omitempty"`
+	StudentList []primitive.ObjectID `bson:"student_list,omitempty"`
+	GroupsForum []primitive.ObjectID `bson:"groups_forum,omitempty"`
 }
 
 type ForumPost struct {
-	ID               primitive.ObjectID `bson:"_id,omitempty" json:"id,omitempty"`
-	Title            string             `bson:"title,omitempty" json:"title,omitempty"`
-	Type             ForumPostType      `bson:"type,omitempty" json:"type,omitempty"`
-	Tags             []string           `bson:"tags,omitempty" json:"tags,omitempty"`
-	RelatedCompanies []CompanyProfile   `bson:"related_companies,omitempty" json:"related_companies,omitempty"`
-	// RelatedStudents  []primitive.ObjectID `bson:"related_students,omitempty" json:"related_students,omitempty"`
-	Notify  NotifyForum        `bson:"notify,omitempty" json:"notify,omitempty"`
-	Content []ForumPostContent `bson:"content,omitempty" json:"content,omitempty"`
-	Pinned  int                `bson:"pinned,omitempty" json:"pinned,omitempty"`
+	ID               primitive.ObjectID   `bson:"_id,omitempty" json:"id,omitempty"`
+	Title            string               `bson:"title,omitempty" json:"title,omitempty"`
+	Type             ForumPostType        `bson:"type,omitempty" json:"type,omitempty"`
+	Tags             []string             `bson:"tags,omitempty" json:"tags,omitempty"`
+	RelatedCompanies []primitive.ObjectID `bson:"related_companies,omitempty" json:"related_companies,omitempty"`
+	Notify           NotifyForum          `bson:"notify,omitempty" json:"notify,omitempty"`
+	Content          []ForumPostContent   `bson:"content,omitempty" json:"content,omitempty"`
+	Pinned           int                  `bson:"pinned,omitempty" json:"pinned,omitempty"`
 
 	// metadata
 	CreatedBy primitive.ObjectID   `bson:"created_by,omitempty" json:"created_by,omitempty"`
@@ -39,13 +38,8 @@ type ForumPost struct {
 	UpdatedAt primitive.DateTime   `bson:"updated_at,omitempty" json:"updated_at,omitempty"`
 }
 
-// type ForumPostContent struct {
-// 	Type ForumPostContentType
-// 	Data interface{}
-// }
-
 type ForumPostContent struct {
-	TopGenericContent    string             `bson:"top_generic_content,omitempty" json:"top_generic_content,omitempty"`
-	BottomGenericContent string             `bson:"bottom_generic_content,omitempty" json:"bottom_generic_content,omitempty"`
-	StudentList          primitive.ObjectID `bson:"student_list" json:"student_list"`
+	TopGenericContent    map[string]interface{} `bson:"top_generic_content,omitempty" json:"top_generic_content,omitempty"`
+	BottomGenericContent map[string]interface{} `bson:"bottom_generic_content,omitempty" json:"bottom_generic_content,omitempty"`
+	StudentList          []primitive.ObjectID   `bson:"student_list" json:"student_list"`
 }
