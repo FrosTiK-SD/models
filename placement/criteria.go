@@ -1,4 +1,4 @@
-package placement
+package opportunity
 
 type Gender string
 

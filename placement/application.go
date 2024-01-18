@@ -1,4 +1,4 @@
-package placement
+package opportunity
 
 import (
 	"github.com/FrosTiK-SD/models-go/resume"
