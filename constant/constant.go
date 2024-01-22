@@ -1,16 +1,5 @@
 package constant
 
-const DB = "portal"
-
-const IAFCollection = "IAF"
-const IAFDraftCollection = "IAFDraft"
-
-const JAFCollection = "JAF"
-const JAFDraftCollection = "JAFDraft"
-
-const RecruiterCollection = "recruiters"
-const CompanyCollection = "companies"
-const AuthGroupCollection = "groups"
 const CurrentAcademicSession = S_2023_2024
 
 var GenericEmailProviders = []string{"gmail.com", "outlook.com", "protonmail.com", "tutanota.com", "yahoo.com"}
@@ -29,11 +18,4 @@ const (
 	S_2028_2029 AcademicSession = "2028-29"
 	S_2029_2030 AcademicSession = "2029-30"
 	S_2030_2031 AcademicSession = "2030-31"
-)
-
-const (
-	BTECH = "btech"
-	IDD   = "idd"
-	MTECH = "mtech"
-	PHD   = "phd"
 )

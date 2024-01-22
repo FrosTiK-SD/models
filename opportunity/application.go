@@ -1,8 +1,6 @@
 package opportunity
 
 import (
-	"github.com/FrosTiK-SD/iitbhu-tpc-models-golang/resume"
-	"github.com/FrosTiK-SD/iitbhu-tpc-models-golang/student"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
@@ -12,14 +10,6 @@ type Application struct {
 	Student          primitive.ObjectID `json:"student,omitempty"`
 	Resume           primitive.ObjectID `json:"resume,omitempty"`
 	DetailsRequested []DetailsRequested `json:"details_requested,omitempty"`
-}
-
-type ApplicationPopulated struct {
-	ID               primitive.ObjectID   `json:"id,omitempty"`
-	Opportunity      OpportunityPopulated `json:"opportunity,omitempty"`
-	Student          student.Student      `json:"student,omitempty"`
-	Resume           resume.Resume        `json:"resume,omitempty"`
-	DetailsRequested []DetailsRequested   `json:"details_requested,omitempty"`
 }
 
 type DetailsRequested struct {
