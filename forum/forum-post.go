@@ -18,7 +18,7 @@ type NotificationGroups struct {
 
 type NotifyForum struct {
 	StudentList []primitive.ObjectID `bson:"studentList,omitempty" json:"studentList"`
-	GroupsForum []primitive.ObjectID `bson:"groupsForum,omitempty" json:"grouptsForum"`
+	GroupsForum []string             `bson:"groupsForum,omitempty" json:"grouptsForum"`
 }
 
 type ForumPost struct {
