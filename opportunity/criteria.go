@@ -6,7 +6,7 @@ import (
 )
 
 type Criteria struct {
-	ID            primitive.ObjectID `bson:"id" json:"id,omitempty"`
+	ID            primitive.ObjectID `bson:"_id" json:"_id,omitempty"`
 	Xth           float32            `bson:"xth" json:"xth,omitempty"`
 	XIIth         float32            `bson:"xiith" json:"xiith,omitempty"`
 	CGPA          float32            `bson:"cgpa" json:"cgpa,omitempty"`

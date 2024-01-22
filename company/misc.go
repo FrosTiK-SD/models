@@ -6,7 +6,7 @@ import (
 )
 
 type OID struct {
-	ID primitive.ObjectID `json:"id"`
+	ID primitive.ObjectID `json:"_id"`
 }
 
 type AlternateHR struct {

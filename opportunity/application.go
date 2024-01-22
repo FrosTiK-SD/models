@@ -5,15 +5,9 @@ import (
 )
 
 type Application struct {
-	ID               primitive.ObjectID `json:"id,omitempty"`
-	Opportunity      primitive.ObjectID `json:"opportunity,omitempty"`
-	Student          primitive.ObjectID `json:"student,omitempty"`
-	Resume           primitive.ObjectID `json:"resume,omitempty"`
-	DetailsRequested []DetailsRequested `json:"details_requested,omitempty"`
-}
-
-type DetailsRequested struct {
-	Key   string `json:"key,omitempty"`
-	Type  string `json:"type,omitempty"`
-	Value string `json:"value,omitempty"`
+	ID                     primitive.ObjectID     `bson:"_id" json:"_id,omitempty"`
+	Opportunity            primitive.ObjectID     `bson:"opportunity" json:"opportunity,omitempty"`
+	Student                primitive.ObjectID     `bson:"student" json:"student,omitempty"`
+	Resume                 primitive.ObjectID     `bson:"resume" json:"resume,omitempty"`
+	DetailsRequestedSchema map[string]interface{} `bson:"detailsRequestedSchema" json:"detailsRequestedSchema"`
 }
