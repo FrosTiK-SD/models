@@ -6,9 +6,9 @@ import (
 
 type ShortList struct {
 	ID       primitive.ObjectID   `bson:"_id,omitempty" json:"_id,omitempty"`
-	Profile  primitive.ObjectID   `bson:"profile,omitempty" json:"profile"`
-	Type     string               `bson:"type,omitempty" json:"type"`
-	Students []primitive.ObjectID `bson:"studentList,omitempty" json:"studentList"`
+	Profile  primitive.ObjectID   `bson:"profile,omitempty" json:"profile,omitempty"`
+	Type     string               `bson:"type,omitempty" json:"type,omitempty"`
+	Students []primitive.ObjectID `bson:"studentList,omitempty" json:"studentList,omitempty"`
 
 	//metadata
 	CreatedBy primitive.ObjectID   `bson:"createdBy,omitempty" json:"createdBy,omitempty"`
