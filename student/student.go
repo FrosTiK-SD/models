@@ -3,7 +3,7 @@ package student
 import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 
-	group "github.com/FrosTiK-SD/frostik-models/group"
+	group "github.com/FrosTiK-SD/iitbhu-tpc-models-golang/group"
 )
 
 type Student struct {
