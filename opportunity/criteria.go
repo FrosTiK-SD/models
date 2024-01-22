@@ -5,14 +5,6 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
-type Gender string
-
-const (
-	MALE         Gender = "male"
-	FEMALE       Gender = "female"
-	OTHER_GENDER Gender = "other"
-)
-
 type Criteria struct {
 	ID            primitive.ObjectID `bson:"id" json:"id,omitempty"`
 	Xth           float32            `bson:"xth" json:"xth,omitempty"`
@@ -22,7 +14,7 @@ type Criteria struct {
 	Courses       []constant.Course  `bson:"courses" json:"courses,omitempty"`
 	ActiveBacklog int                `bson:"active_backlog" json:"active_backlog,omitempty"`
 	TotalBacklog  int                `bson:"total_backlog" json:"total_backlog,omitempty"`
-	Gender        Gender             `bson:"gender" json:"gender,omitempty"`
+	Gender        constant.Gender    `bson:"gender" json:"gender,omitempty"`
 	Disability    bool               `bson:"disability" json:"disability,omitempty"`
 
 	// metadata
