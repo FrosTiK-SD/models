@@ -1,4 +1,4 @@
-module github.com/FrosTiK-SD/frostik-models
+module github.com/FrosTiK-SD/models
 
 go 1.21.4
 

@@ -1,7 +1,7 @@
 package company
 
 import (
-	misc "github.com/FrosTiK-SD/frostik-models/misc"
+	misc "github.com/FrosTiK-SD/models/misc"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
