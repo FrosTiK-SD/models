@@ -1,7 +1,7 @@
 package opportunity
 
 import (
-	"github.com/FrosTiK-SD/iitbhu-tpc-models-golang/constant"
+	"github.com/FrosTiK-SD/models/constant"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 

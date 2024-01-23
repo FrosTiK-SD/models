@@ -1,7 +1,7 @@
 package company
 
 import (
-	constant "github.com/FrosTiK-SD/iitbhu-tpc-models-golang/constant"
+	constant "github.com/FrosTiK-SD/models/constant"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 

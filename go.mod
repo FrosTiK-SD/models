@@ -1,4 +1,4 @@
-module github.com/FrosTiK-SD/iitbhu-tpc-models-golang
+module github.com/FrosTiK-SD/models
 
 go 1.21.6
 

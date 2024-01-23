@@ -1,7 +1,7 @@
 package forum
 
 import (
-	company "github.com/FrosTiK-SD/iitbhu-tpc-models-golang/company"
+	company "github.com/FrosTiK-SD/models/company"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
