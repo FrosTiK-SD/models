@@ -3,6 +3,7 @@ package forum
 import (
 	company "github.com/FrosTiK-SD/models/company"
 	"github.com/FrosTiK-SD/models/constant"
+	"github.com/FrosTiK-SD/models/student"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
@@ -13,8 +14,9 @@ type CompanyProfile struct {
 }
 
 type ForumGroup struct {
-	Branch constant.Branch
-	Course constant.Course
+	Branch constant.Branch `bson:"branch" json:"branch,omitempty"`
+	Course constant.Course `bson:"course" json:"course,omitempty"`
+	Batch  student.Batch   `bson:"batch" json:"batch,omitempty"`
 }
 
 type NotifyForum struct {

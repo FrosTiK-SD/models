@@ -32,6 +32,7 @@ type Student struct {
 	LastName         string                       `json:"lastName" bson:"lastName"`
 	Department       string                       `json:"department" bson:"department"`
 	Course           constant.Course              `json:"course" bson:"course"`
+	Specialisation   constant.Specialisation      `json:"specialisation" bson:"specialisation"`
 	Email            string                       `json:"email" bson:"email"`
 	PersonalEmail    string                       `json:"personalEmail" bson:"personalEmail"`
 	LinkedIn         string                       `json:"linkedIn" bson:"linkedIn"`
