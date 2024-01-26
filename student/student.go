@@ -1,105 +1,125 @@
 package student
 
 import (
-	"go.mongodb.org/mongo-driver/bson/primitive"
+	constant "github.com/FrosTiK-SD/models/constant"
+	misc "github.com/FrosTiK-SD/models/misc"
 
-	group "github.com/FrosTiK-SD/models/group"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 )
+
+type ReservationCategory struct {
+	Category string `json:"category,omitempty" bson:"category"`
+	IsPWD    bool   `json:"isPwd,omitempty" bson:"isPwD"`
+	IsEWS    bool   `json:"isEWS,omitempty" bson:"isEWS"`
+}
+
+type RankDetails struct {
+	Rank         int                 `bson:"rank" json:"rank,omitempty"`
+	RankCategory ReservationCategory `bson:"rankCategory" json:"rankCategory,omitempty"`
+}
+
+type SemesterDetails struct {
+	One   float32 `json:"semesterOne,omitempty" bson:"semesterOne"`
+	Two   float32 `json:"semesterTwo,omitempty" bson:"semesterTwo"`
+	Three float32 `json:"semesterThree,omitempty" bson:"semesterThree"`
+	Four  float32 `json:"semesterFour,omitempty" bson:"semesterFour"`
+	Five  float32 `json:"semesterFive,omitempty" bson:"semesterFive"`
+	Six   float32 `json:"semesterSix,omitempty" bson:"semesterSix"`
+	Seven float32 `json:"semesterSeven,omitempty" bson:"semesterSeven"`
+	Eight float32 `json:"semesterEight,omitempty" bson:"semesterEight"`
+	Nine  float32 `json:"semesterNine,omitempty" bson:"semesterNine"`
+	Ten   float32 `json:"semesterTen,omitempty" bson:"semesterTen"`
+}
+
+type SummerTermDetails struct {
+	One   float32 `json:"summerTermOne,omitempty" bson:"summerTermOne"`
+	Two   float32 `json:"summerTermTwo,omitempty" bson:"summerTermTwo"`
+	Three float32 `json:"summerTermThree,omitempty" bson:"summerTermThree"`
+	Four  float32 `json:"summerTermFour,omitempty" bson:"summerTermFour"`
+	Five  float32 `json:"summerTermFive,omitempty" bson:"summerTermFive"`
+}
+
+type EducationDetails struct {
+	Board       string  `bson:"board" json:"board,omitempty"`
+	PassOutYear string  `bson:"passOutYear" json:"passOutYear,omitempty"`
+	Score       float32 `bson:"score" json:"score,omitempty"`
+	Institute   string  `bson:"institute" json:"institute,omitempty"`
+}
+
+type Academics struct {
+	JEERank           RankDetails       `json:"jeeRank" bson:"jeeRank"`
+	GATERank          RankDetails       `json:"gateRank" bson:"gateRank"`
+	XthClass          EducationDetails  `json:"xClass" bson:"xClass"`
+	XiithClass        EducationDetails  `json:"xiiClass" bson:"xiiClass"`
+	EducationGap      int               `json:"educationGap" bson:"educationGap"`
+	SemesterDetails   SemesterDetails   `json:"semesterDetails" bson:"semesterDetails"`
+	SummerTermDetails SummerTermDetails `json:"summerTermDetails" bson:"summerTermDetails"`
+	CurrentCGPA       float32           `json:"currentCGPA,omitempty" bson:"currentCGPA"`
+	ActiveBacklogs    int               `json:"activeBacklogs" bson:"activeBacklogs"`
+	TotalBacklogs     int               `json:"totalBacklogs" bson:"totalBacklogs"`
+
+	Verification misc.Verification `json:"verification" bson:"verification"`
+}
+
+type SocialProfile struct {
+	URL          string            `bson:"url" json:"url,omitempty"`
+	Username     string            `bson:"username" json:"username,omitempty"`
+	Verification misc.Verification `bson:"verification" json:"verification,omitempty"`
+}
+
+type SocialProfiles struct {
+	PersonalEmail  SocialProfile `json:"personalEmail" bson:"personalEmail"`
+	Mobile         SocialProfile `json:"mobile" bson:"mobile"`
+	LinkedIn       SocialProfile `json:"linkedIn" bson:"linkedIn"`
+	Github         SocialProfile `json:"github" bson:"github"`
+	MicrosoftTeams SocialProfile `json:"microsoftTeams" bson:"microsoftTeams"`
+	GoogleScholar  SocialProfile `json:"googleScholar" bson:"googleScholar"`
+
+	Codeforces SocialProfile `json:"codeforces" bson:"codeforces"`
+	CodeChef   SocialProfile `json:"codechef" bson:"codechef"`
+	LeetCode   SocialProfile `json:"leetcode" bson:"leetcode"`
+	Kaggle     SocialProfile `json:"kaggle" bson:"kaggle"`
+}
+
+type Batch struct {
+	StartYear int `json:"startYear,omitempty" bson:"startYear"`
+	EndYear   int `json:"endYear,omitempty" bson:"endYear"`
+}
+
+type ParentsDetails struct {
+	FatherName       string `json:"fatherName" bson:"fatherName"`
+	FatherOccupation string `json:"fatherOccupation" bson:"fatherOccupation"`
+	MotherName       string `json:"motherName" bson:"motherName"`
+	MotherOccupation string `json:"motherOccupation" bson:"motherOccupation"`
+	MotherTongue     string `json:"motherTongue" bson:"motherTongue"`
+}
 
 type Student struct {
 	ID               primitive.ObjectID   `json:"_id" bson:"_id"`
 	Groups           []primitive.ObjectID `json:"groups" bson:"groups"`
 	CompaniesAlloted []string             `json:"companiesAlloted" bson:"companiesAlloted"`
-	Batch            int                  `json:"batch" bson:"batch"`
-	RollNo           int                  `json:"rollNo" bson:"rollNo"`
-	FirstName        string               `json:"firstName" bson:"firstName"`
-	LastName         string               `json:"lastName" bson:"lastName"`
-	Department       string               `json:"department" bson:"department"`
-	Course           string               `json:"course" bson:"course"`
-	Email            string               `json:"email" bson:"email"`
-	PersonalEmail    string               `json:"personalEmail" bson:"personalEmail"`
-	LinkedIn         string               `json:"linkedIn" bson:"linkedIn"`
-	Github           string               `json:"github" bson:"github"`
-	MicrosoftTeams   string               `json:"microsoftTeams" bson:"microsoftTeams"`
-	Mobile           int64                `json:"mobile" bson:"mobile"`
-	Gender           string               `json:"gender" bson:"gender"`
-	Dob              string               `json:"dob" bson:"dob"`
-	PermanentAddress string               `json:"permanentAddress" bson:"permanentAddress"`
-	PresentAddress   string               `json:"presentAddress" bson:"presentAddress"`
-	Category         string               `json:"category" bson:"category"`
-	FatherName       string               `json:"fatherName" bson:"fatherName"`
-	FatherOccupation string               `json:"fatherOccupation" bson:"fatherOccupation"`
-	MotherName       string               `json:"motherName" bson:"motherName"`
-	MotherOccupation string               `json:"motherOccupation" bson:"motherOccupation"`
-	MotherTongue     string               `json:"motherTongue" bson:"motherTongue"`
-	EducationGap     string               `json:"educationGap" bson:"educationGap"`
-	JeeRank          string               `json:"jeeRank" bson:"jeeRank"`
-	Cgpa             float32              `json:"cgpa" bson:"cgpa"`
-	ActiveBacklogs   int                  `json:"activeBacklogs" bson:"activeBacklogs"`
-	TotalBacklogs    int                  `json:"totalBacklogs" bson:"totalBacklogs"`
-	XBoard           string               `json:"xBoard" bson:"xBoard"`
-	XYear            string               `json:"xYear" bson:"xYear"`
-	XPercentage      float32              `json:"xPercentage" bson:"xPercentage"`
-	XInstitute       string               `json:"xInstitute" bson:"xInstitute"`
-	XiiBoard         string               `json:"xiiBoard" bson:"xiiBoard"`
-	XiiYear          string               `json:"xiiYear" bson:"xiiYear"`
-	XiiPercentage    float32              `json:"xiiPercentage" bson:"xiiPercentage"`
-	XiiInstitute     string               `json:"xiiInstitute" bson:"xiiInstitute"`
-	SemesterOne      float32              `json:"semesterOne" bson:"semesterOne"`
-	SemesterTwo      float32              `json:"semesterTwo" bson:"semesterTwo"`
-	SemesterThree    float32              `json:"semesterThree" bson:"semesterThree"`
-	SemesterFour     float32              `json:"semesterFour" bson:"semesterFour"`
-	SemesterFive     float32              `json:"semesterFive" bson:"semesterFive"`
-	SemesterSix      float32              `json:"semesterSix" bson:"semesterSix"`
-	UpdatedAt        primitive.DateTime   `json:"updatedAt" bson:"updatedAt"`
-	CreatedAt        primitive.DateTime   `json:"createdAt" bson:"createdAt"`
-}
 
-type StudentPopulated struct {
-	ID               primitive.ObjectID `json:"_id" bson:"_id"`
-	Batch            int                `json:"batch" bson:"batch"`
-	RollNo           int                `json:"rollNo" bson:"rollNo"`
-	FirstName        string             `json:"firstName" bson:"firstName"`
-	LastName         string             `json:"lastName" bson:"lastName"`
-	Department       string             `json:"department" bson:"department"`
-	Course           string             `json:"course" bson:"course"`
-	Email            string             `json:"email" bson:"email"`
-	PersonalEmail    string             `json:"personalEmail" bson:"personalEmail"`
-	LinkedIn         string             `json:"linkedIn" bson:"linkedIn"`
-	Github           string             `json:"github" bson:"github"`
-	MicrosoftTeams   string             `json:"microsoftTeams" bson:"microsoftTeams"`
-	Mobile           int64              `json:"mobile" bson:"mobile"`
-	Gender           string             `json:"gender" bson:"gender"`
-	Dob              string             `json:"dob" bson:"dob"`
-	PermanentAddress string             `json:"permanentAddress" bson:"permanentAddress"`
-	PresentAddress   string             `json:"presentAddress" bson:"presentAddress"`
-	Category         string             `json:"category" bson:"category"`
-	FatherName       string             `json:"fatherName" bson:"fatherName"`
-	FatherOccupation string             `json:"fatherOccupation" bson:"fatherOccupation"`
-	MotherName       string             `json:"motherName" bson:"motherName"`
-	MotherOccupation string             `json:"motherOccupation" bson:"motherOccupation"`
-	MotherTongue     string             `json:"motherTongue" bson:"motherTongue"`
-	EducationGap     string             `json:"educationGap" bson:"educationGap"`
-	JeeRank          string             `json:"jeeRank" bson:"jeeRank"`
-	Cgpa             float32            `json:"cgpa" bson:"cgpa"`
-	ActiveBacklogs   int                `json:"activeBacklogs" bson:"activeBacklogs"`
-	TotalBacklogs    int                `json:"totalBacklogs" bson:"totalBacklogs"`
-	XBoard           string             `json:"xBoard" bson:"xBoard"`
-	XYear            string             `json:"xYear" bson:"xYear"`
-	XPercentage      float32            `json:"xPercentage" bson:"xPercentage"`
-	XInstitute       string             `json:"xInstitute" bson:"xInstitute"`
-	XiiBoard         string             `json:"xiiBoard" bson:"xiiBoard"`
-	XiiYear          string             `json:"xiiYear" bson:"xiiYear"`
-	XiiPercentage    float32            `json:"xiiPercentage" bson:"xiiPercentage"`
-	XiiInstitute     string             `json:"xiiInstitute" bson:"xiiInstitute"`
-	SemesterOne      float32            `json:"semesterOne" bson:"semesterOne"`
-	SemesterTwo      float32            `json:"semesterTwo" bson:"semesterTwo"`
-	SemesterThree    float32            `json:"semesterThree" bson:"semesterThree"`
-	SemesterFour     float32            `json:"semesterFour" bson:"semesterFour"`
-	SemesterFive     float32            `json:"semesterFive" bson:"semesterFive"`
-	SemesterSix      float32            `json:"semesterSix" bson:"semesterSix"`
-	Groups           []group.Group      `json:"groups" bson:"groups"`
-	UpdatedAt        primitive.DateTime `json:"updatedAt" bson:"updatedAt"`
-	CreatedAt        primitive.DateTime `json:"createdAt" bson:"createdAt"`
-	CompaniesAlloted []string           `json:"companiesAlloted" bson:"companiesAlloted"`
+	Batch          Batch           `json:"batch" bson:"batch"`
+	RollNo         int             `json:"rollNo" bson:"rollNo"`
+	InstituteEmail string          `json:"instituteEmail" bson:"instituteEmail"`
+	Department     string          `json:"department" bson:"department"`
+	Course         constant.Course `json:"course" bson:"course"`
+	Specialisation string          `json:"specialisation" bson:"specialisation"`
+
+	FirstName string `json:"firstName" bson:"firstName"`
+	LastName  string `json:"lastName" bson:"lastName"`
+
+	Gender           constant.Gender     `json:"gender" bson:"gender"`
+	DOB              string              `json:"dob" bson:"dob"`
+	PermanentAddress string              `json:"permanentAddress" bson:"permanentAddress"`
+	PresentAddress   string              `json:"presentAddress" bson:"presentAddress"`
+	Category         ReservationCategory `json:"category" bson:"category"`
+	ParentsDetails   ParentsDetails      `json:"parentsDetails" bson:"parentsDetails"`
+
+	Academics      Academics      `json:"academics" bson:"academics"`
+	SocialProfiles SocialProfiles `json:"socialProfiles" bson:"socialProfiles"`
+
+	// metadata
+	UpdatedAt primitive.DateTime `json:"updatedAt" bson:"updatedAt"`
+	CreatedAt primitive.DateTime `json:"createdAt" bson:"createdAt"`
 }

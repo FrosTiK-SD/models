@@ -2,11 +2,8 @@ package forum
 
 type ForumPostContentType string
 type ForumPostType string
-type NotifyToType string
 
 const (
-	FORUMPOSTCOLLECTION = "forumpost"
-
 	// ForumPostContentType
 	TEXT         ForumPostContentType = "TEXT"
 	STUDENT_LIST ForumPostContentType = "STUDENT_LIST"
@@ -25,8 +22,4 @@ const (
 	INTERVIEW_EXPERIENCE ForumPostType = "INTERVIEW_EXPERIENCE"
 	TEST_EXPERIENCE      ForumPostType = "TEST_EXPERIENCE"
 	OTHER                ForumPostType = "OTHER"
-
-	// Notify
-	ALL NotifyToType = "ALL"
-	TPR NotifyToType = "TPR"
 )

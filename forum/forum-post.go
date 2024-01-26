@@ -2,6 +2,8 @@ package forum
 
 import (
 	company "github.com/FrosTiK-SD/models/company"
+	"github.com/FrosTiK-SD/models/constant"
+	"github.com/FrosTiK-SD/models/student"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
@@ -11,9 +13,10 @@ type CompanyProfile struct {
 	JAF     company.JAF     `bson:"jaf,omitempty" json:"jaf,omitempty"`
 }
 
-type NotificationGroups struct {
-	ID       primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"`
-	NotifyTo NotifyToType       `bson:"notifyTo,omitempty" json:"notifyTo,omitempty"`
+type ForumGroup struct {
+	Branch constant.Branch `bson:"branch" json:"branch,omitempty"`
+	Course constant.Course `bson:"course" json:"course,omitempty"`
+	Batch  student.Batch   `bson:"batch" json:"batch,omitempty"`
 }
 
 type NotifyForum struct {
