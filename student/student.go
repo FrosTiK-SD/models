@@ -41,9 +41,9 @@ type SummerTermDetails struct {
 
 type EducationDetails struct {
 	Board       string  `bson:"board" json:"board,omitempty"`
-	PassOutYear string  `bson:"passOutYear" json:"passOutYear,omitempty"`
-	Score       float32 `bson:"score" json:"score,omitempty"`
 	Institute   string  `bson:"institute" json:"institute,omitempty"`
+	PassOutYear int     `bson:"passOutYear" json:"passOutYear,omitempty"`
+	Score       float32 `bson:"score" json:"score,omitempty"`
 }
 
 type Academics struct {
