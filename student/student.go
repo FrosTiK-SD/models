@@ -106,8 +106,9 @@ type Student struct {
 	Course         constant.Course `json:"course" bson:"course"`
 	Specialisation string          `json:"specialisation" bson:"specialisation"`
 
-	FirstName string `json:"firstName" bson:"firstName"`
-	LastName  string `json:"lastName" bson:"lastName"`
+	FirstName  string `json:"firstName" bson:"firstName"`
+	MiddleName string `json:"middleName" bson:"middleName"`
+	LastName   string `json:"lastName" bson:"lastName"`
 
 	Gender           constant.Gender     `json:"gender" bson:"gender"`
 	DOB              string              `json:"dob" bson:"dob"`
