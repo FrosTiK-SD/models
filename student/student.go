@@ -7,12 +7,20 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
-type Academics struct {
-	JEERank           int  `json:"jeeRank" bson:"jeeRank"`
-	IsCategoryJEERank bool `json:"isCategoryJEERank" bson:"isCategoryJEERank"`
+type ReservationCategory struct {
+	Category string `json:"category,omitempty" bson:"category"`
+	IsPWD    bool   `json:"isPwd,omitempty" bson:"isPwD"`
+	IsEWS    bool   `json:"isEWS,omitempty" bson:"isEWS"`
+}
 
-	GATERank           int  `json:"gateRank" bson:"gateRank"`
-	IsCategoryGATERank bool `json:"isCategoryGATERank" bson:"isCategoryGATERank"`
+type RankDetails struct {
+	Rank         int                 `bson:"rank" json:"rank,omitempty"`
+	RankCategory ReservationCategory `bson:"rankCategory" json:"rankCategory,omitempty"`
+}
+
+type Academics struct {
+	JEERank  RankDetails `json:"jeeRank" bson:"jeeRank"`
+	GATERank RankDetails `json:"gateRank" bson:"gateRank"`
 
 	XBoard      string  `json:"xBoard" bson:"xBoard"`
 	XYear       int     `json:"xYear" bson:"xYear"`
@@ -69,12 +77,6 @@ type SocialProfiles struct {
 type Batch struct {
 	StartYear int `json:"startYear,omitempty" bson:"startYear"`
 	EndYear   int `json:"endYear,omitempty" bson:"endYear"`
-}
-
-type ReservationCategory struct {
-	Category string `json:"category,omitempty" bson:"category"`
-	IsPWD    bool   `json:"isPwd,omitempty" bson:"isPwD"`
-	IsEWS    bool   `json:"isEWS,omitempty" bson:"isEWS"`
 }
 
 type Student struct {
