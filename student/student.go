@@ -58,25 +58,37 @@ type Academics struct {
 	Verification misc.Verification `json:"verification" bson:"verification"`
 }
 
+type SocialProfile struct {
+	URL          string            `bson:"url" json:"url,omitempty"`
+	Username     string            `bson:"username" json:"username,omitempty"`
+	Verification misc.Verification `bson:"verification" json:"verification,omitempty"`
+}
+
 type SocialProfiles struct {
-	PersonalEmail  string `json:"personalEmail" bson:"personalEmail"`
-	Mobile         string `json:"mobile" bson:"mobile"`
-	LinkedIn       string `json:"linkedIn" bson:"linkedIn"`
-	Github         string `json:"github" bson:"github"`
-	MicrosoftTeams string `json:"microsoftTeams" bson:"microsoftTeams"`
-	GoogleScholar  string `json:"googleScholar" bson:"googleScholar"`
+	PersonalEmail  SocialProfile `json:"personalEmail" bson:"personalEmail"`
+	Mobile         SocialProfile `json:"mobile" bson:"mobile"`
+	LinkedIn       SocialProfile `json:"linkedIn" bson:"linkedIn"`
+	Github         SocialProfile `json:"github" bson:"github"`
+	MicrosoftTeams SocialProfile `json:"microsoftTeams" bson:"microsoftTeams"`
+	GoogleScholar  SocialProfile `json:"googleScholar" bson:"googleScholar"`
 
-	Codeforces string `json:"codeforces" bson:"codeforces"`
-	CodeChef   string `json:"codechef" bson:"codechef"`
-	LeetCode   string `json:"leetcode" bson:"leetcode"`
-	Kaggle     string `json:"kaggle" bson:"kaggle"`
-
-	Verification misc.Verification `json:"verification" bson:"verification"`
+	Codeforces SocialProfile `json:"codeforces" bson:"codeforces"`
+	CodeChef   SocialProfile `json:"codechef" bson:"codechef"`
+	LeetCode   SocialProfile `json:"leetcode" bson:"leetcode"`
+	Kaggle     SocialProfile `json:"kaggle" bson:"kaggle"`
 }
 
 type Batch struct {
 	StartYear int `json:"startYear,omitempty" bson:"startYear"`
 	EndYear   int `json:"endYear,omitempty" bson:"endYear"`
+}
+
+type ParentsDetails struct {
+	FatherName       string `json:"fatherName" bson:"fatherName"`
+	FatherOccupation string `json:"fatherOccupation" bson:"fatherOccupation"`
+	MotherName       string `json:"motherName" bson:"motherName"`
+	MotherOccupation string `json:"motherOccupation" bson:"motherOccupation"`
+	MotherTongue     string `json:"motherTongue" bson:"motherTongue"`
 }
 
 type Student struct {
@@ -99,11 +111,7 @@ type Student struct {
 	PermanentAddress string              `json:"permanentAddress" bson:"permanentAddress"`
 	PresentAddress   string              `json:"presentAddress" bson:"presentAddress"`
 	Category         ReservationCategory `json:"category" bson:"category"`
-	FatherName       string              `json:"fatherName" bson:"fatherName"`
-	FatherOccupation string              `json:"fatherOccupation" bson:"fatherOccupation"`
-	MotherName       string              `json:"motherName" bson:"motherName"`
-	MotherOccupation string              `json:"motherOccupation" bson:"motherOccupation"`
-	MotherTongue     string              `json:"motherTongue" bson:"motherTongue"`
+	ParentsDetails   ParentsDetails      `json:"parentsDetails" bson:"parentsDetails"`
 
 	Academics      Academics      `json:"academics" bson:"academics"`
 	SocialProfiles SocialProfiles `json:"socialProfiles" bson:"socialProfiles"`
