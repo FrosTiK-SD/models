@@ -4,8 +4,6 @@ type ForumPostContentType string
 type ForumPostType string
 
 const (
-	FORUMPOSTCOLLECTION = "forumpost"
-
 	// ForumPostContentType
 	TEXT         ForumPostContentType = "TEXT"
 	STUDENT_LIST ForumPostContentType = "STUDENT_LIST"
