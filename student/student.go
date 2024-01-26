@@ -18,42 +18,45 @@ type RankDetails struct {
 	RankCategory ReservationCategory `bson:"rankCategory" json:"rankCategory,omitempty"`
 }
 
+type SemesterDetails struct {
+	One   float32 `json:"semesterOne,omitempty" bson:"semesterOne"`
+	Two   float32 `json:"semesterTwo,omitempty" bson:"semesterTwo"`
+	Three float32 `json:"semesterThree,omitempty" bson:"semesterThree"`
+	Four  float32 `json:"semesterFour,omitempty" bson:"semesterFour"`
+	Five  float32 `json:"semesterFive,omitempty" bson:"semesterFive"`
+	Six   float32 `json:"semesterSix,omitempty" bson:"semesterSix"`
+	Seven float32 `json:"semesterSeven,omitempty" bson:"semesterSeven"`
+	Eight float32 `json:"semesterEight,omitempty" bson:"semesterEight"`
+	Nine  float32 `json:"semesterNine,omitempty" bson:"semesterNine"`
+	Ten   float32 `json:"semesterTen,omitempty" bson:"semesterTen"`
+}
+
+type SummerTermDetails struct {
+	One   float32 `json:"summerTermOne,omitempty" bson:"summerTermOne"`
+	Two   float32 `json:"summerTermTwo,omitempty" bson:"summerTermTwo"`
+	Three float32 `json:"summerTermThree,omitempty" bson:"summerTermThree"`
+	Four  float32 `json:"summerTermFour,omitempty" bson:"summerTermFour"`
+	Five  float32 `json:"summerTermFive,omitempty" bson:"summerTermFive"`
+}
+
+type EducationDetails struct {
+	Board       string  `bson:"board" json:"board,omitempty"`
+	PassOutYear string  `bson:"passOutYear" json:"passOutYear,omitempty"`
+	Score       float32 `bson:"score" json:"score,omitempty"`
+	Institute   string  `bson:"institute" json:"institute,omitempty"`
+}
+
 type Academics struct {
-	JEERank  RankDetails `json:"jeeRank" bson:"jeeRank"`
-	GATERank RankDetails `json:"gateRank" bson:"gateRank"`
-
-	XBoard      string  `json:"xBoard" bson:"xBoard"`
-	XYear       int     `json:"xYear" bson:"xYear"`
-	XPercentage float32 `json:"xPercentage" bson:"xPercentage"`
-	XInstitute  string  `json:"xInstitute" bson:"xInstitute"`
-
-	XiiBoard      string  `json:"xiiBoard" bson:"xiiBoard"`
-	XiiYear       int     `json:"xiiYear" bson:"xiiYear"`
-	XiiPercentage float32 `json:"xiiPercentage" bson:"xiiPercentage"`
-	XiiInstitute  string  `json:"xiiInstitute" bson:"xiiInstitute"`
-
-	EducationGap int `json:"educationGap" bson:"educationGap"`
-
-	SemesterOne   float32 `json:"semesterOne,omitempty" bson:"semesterOne"`
-	SemesterTwo   float32 `json:"semesterTwo,omitempty" bson:"semesterTwo"`
-	SemesterThree float32 `json:"semesterThree,omitempty" bson:"semesterThree"`
-	SemesterFour  float32 `json:"semesterFour,omitempty" bson:"semesterFour"`
-	SemesterFive  float32 `json:"semesterFive,omitempty" bson:"semesterFive"`
-	SemesterSix   float32 `json:"semesterSix,omitempty" bson:"semesterSix"`
-	SemesterSeven float32 `json:"semesterSeven,omitempty" bson:"semesterSeven"`
-	SemesterEight float32 `json:"semesterEight,omitempty" bson:"semesterEight"`
-	SemesterNine  float32 `json:"semesterNine,omitempty" bson:"semesterNine"`
-	SemesterTen   float32 `json:"semesterTen,omitempty" bson:"semesterTen"`
-
-	SummerTermOne   float32 `json:"summerTermOne,omitempty" bson:"summerTermOne"`
-	SummerTermTwo   float32 `json:"summerTermTwo,omitempty" bson:"summerTermTwo"`
-	SummerTermThree float32 `json:"summerTermThree,omitempty" bson:"summerTermThree"`
-	SummerTermFour  float32 `json:"summerTermFour,omitempty" bson:"summerTermFour"`
-	SummerTermFive  float32 `json:"summerTermFive,omitempty" bson:"summerTermFive"`
-
-	CurrentCGPA    float32 `json:"currentCGPA,omitempty" bson:"currentCGPA"`
-	ActiveBacklogs int     `json:"activeBacklogs" bson:"activeBacklogs"`
-	TotalBacklogs  int     `json:"totalBacklogs" bson:"totalBacklogs"`
+	JEERank           RankDetails       `json:"jeeRank" bson:"jeeRank"`
+	GATERank          RankDetails       `json:"gateRank" bson:"gateRank"`
+	XthClass          EducationDetails  `json:"xClass" bson:"xClass"`
+	XiithClass        EducationDetails  `json:"xiiClass" bson:"xiiClass"`
+	EducationGap      int               `json:"educationGap" bson:"educationGap"`
+	SemesterDetails   SemesterDetails   `json:"semesterDetails" bson:"semesterDetails"`
+	SummerTermDetails SummerTermDetails `json:"summerTermDetails" bson:"summerTermDetails"`
+	CurrentCGPA       float32           `json:"currentCGPA,omitempty" bson:"currentCGPA"`
+	ActiveBacklogs    int               `json:"activeBacklogs" bson:"activeBacklogs"`
+	TotalBacklogs     int               `json:"totalBacklogs" bson:"totalBacklogs"`
 
 	Verification misc.Verification `json:"verification" bson:"verification"`
 }
