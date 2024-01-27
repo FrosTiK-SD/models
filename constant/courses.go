@@ -6,5 +6,5 @@ const (
 	BTECH Course = "BTech"
 	IDD   Course = "IDD"
 	MTECH Course = "MTech"
-	PHD   Course = "PHD"
+	PHD   Course = "PhD"
 )

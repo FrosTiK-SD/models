@@ -40,23 +40,27 @@ type SummerTermDetails struct {
 }
 
 type EducationDetails struct {
-	Board       string  `bson:"board" json:"board,omitempty"`
-	Institute   string  `bson:"institute" json:"institute,omitempty"`
-	PassOutYear int     `bson:"passOutYear" json:"passOutYear,omitempty"`
-	Score       float32 `bson:"score" json:"score,omitempty"`
+	Certification string  `bson:"certification" json:"certification,omitempty"`
+	Institute     string  `bson:"institute" json:"institute,omitempty"`
+	Year          int     `bson:"year" json:"year,omitempty"`
+	Score         float32 `bson:"score" json:"score,omitempty"`
 }
 
 type Academics struct {
-	JEERank           RankDetails       `json:"jeeRank" bson:"jeeRank"`
-	GATERank          RankDetails       `json:"gateRank" bson:"gateRank"`
-	XthClass          EducationDetails  `json:"xClass" bson:"xClass"`
-	XiithClass        EducationDetails  `json:"xiiClass" bson:"xiiClass"`
-	EducationGap      int               `json:"educationGap" bson:"educationGap"`
-	SemesterDetails   SemesterDetails   `json:"semesterDetails" bson:"semesterDetails"`
-	SummerTermDetails SummerTermDetails `json:"summerTermDetails" bson:"summerTermDetails"`
-	CurrentCGPA       float32           `json:"currentCGPA,omitempty" bson:"currentCGPA"`
-	ActiveBacklogs    int               `json:"activeBacklogs" bson:"activeBacklogs"`
-	TotalBacklogs     int               `json:"totalBacklogs" bson:"totalBacklogs"`
+	JEERank           RankDetails        `json:"jeeRank" bson:"jeeRank"`
+	GATERank          RankDetails        `json:"gateRank" bson:"gateRank"`
+	XthClass          EducationDetails   `json:"xClass" bson:"xClass"`
+	XIIthClass        EducationDetails   `json:"xiiClass" bson:"xiiClass"`
+	UnderGraduate     EducationDetails   `json:"underGraduate" bson:"underGraduate"`
+	Honours           string             `json:"honours" bson:"honours"`
+	PostGraduate      EducationDetails   `json:"postGraduate" bson:"postGraduate"`
+	ThesisEndDate     primitive.DateTime `json:"thesisEndDate" bson:"thesisEndDate"`
+	EducationGap      int                `json:"educationGap" bson:"educationGap"`
+	SemesterDetails   SemesterDetails    `json:"semesterDetails" bson:"semesterDetails"`
+	SummerTermDetails SummerTermDetails  `json:"summerTermDetails" bson:"summerTermDetails"`
+	CurrentCGPA       float32            `json:"currentCGPA,omitempty" bson:"currentCGPA"`
+	ActiveBacklogs    int                `json:"activeBacklogs" bson:"activeBacklogs"`
+	TotalBacklogs     int                `json:"totalBacklogs" bson:"totalBacklogs"`
 
 	Verification misc.Verification `json:"verification" bson:"verification"`
 }
@@ -68,11 +72,10 @@ type SocialProfile struct {
 }
 
 type SocialProfiles struct {
-	PersonalEmail  SocialProfile `json:"personalEmail" bson:"personalEmail"`
-	Mobile         SocialProfile `json:"mobile" bson:"mobile"`
 	LinkedIn       SocialProfile `json:"linkedIn" bson:"linkedIn"`
 	Github         SocialProfile `json:"github" bson:"github"`
 	MicrosoftTeams SocialProfile `json:"microsoftTeams" bson:"microsoftTeams"`
+	Skype          SocialProfile `json:"skype" bson:"skype"`
 	GoogleScholar  SocialProfile `json:"googleScholar" bson:"googleScholar"`
 
 	Codeforces SocialProfile `json:"codeforces" bson:"codeforces"`
@@ -91,7 +94,11 @@ type ParentsDetails struct {
 	FatherOccupation string `json:"fatherOccupation" bson:"fatherOccupation"`
 	MotherName       string `json:"motherName" bson:"motherName"`
 	MotherOccupation string `json:"motherOccupation" bson:"motherOccupation"`
-	MotherTongue     string `json:"motherTongue" bson:"motherTongue"`
+}
+
+type Extras struct {
+	VideoResume  string            `bson:"videoResumes" json:"videoResume,omitempty"`
+	Verification misc.Verification `bson:"verification" json:"verification,omitempty"`
 }
 
 type Student struct {
@@ -110,17 +117,22 @@ type Student struct {
 	MiddleName string `json:"middleName" bson:"middleName"`
 	LastName   string `json:"lastName" bson:"lastName"`
 
+	ProfilePicture   misc.Attachment     `json:"profilePicture" bson:"profilePicture"`
 	Gender           constant.Gender     `json:"gender" bson:"gender"`
-	DOB              string              `json:"dob" bson:"dob"`
+	DOB              primitive.DateTime  `json:"dob" bson:"dob"`
 	PermanentAddress string              `json:"permanentAddress" bson:"permanentAddress"`
 	PresentAddress   string              `json:"presentAddress" bson:"presentAddress"`
+	PersonalEmail    string              `json:"personalEmail" bson:"personalEmail"`
+	Mobile           string              `json:"mobile" bson:"mobile"`
 	Category         ReservationCategory `json:"category" bson:"category"`
+	MotherTongue     string              `json:"motherTongue" bson:"motherTongue"`
 	ParentsDetails   ParentsDetails      `json:"parentsDetails" bson:"parentsDetails"`
 
 	Academics      Academics      `json:"academics" bson:"academics"`
 	SocialProfiles SocialProfiles `json:"socialProfiles" bson:"socialProfiles"`
 
 	// metadata
-	UpdatedAt primitive.DateTime `json:"updatedAt" bson:"updatedAt"`
-	CreatedAt primitive.DateTime `json:"createdAt" bson:"createdAt"`
+	UpdatedAt   primitive.DateTime     `json:"updatedAt" bson:"updatedAt"`
+	CreatedAt   primitive.DateTime     `json:"createdAt" bson:"createdAt"`
+	RawKeyStore map[string]interface{} `json:"raw_key_store" bson:"raw_key_store"`
 }
