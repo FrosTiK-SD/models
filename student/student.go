@@ -147,3 +147,7 @@ type Student struct {
 	CreatedAt   primitive.DateTime     `json:"createdAt" bson:"createdAt"`
 	RawKeyStore map[string]interface{} `json:"raw_key_store" bson:"raw_key_store"`
 }
+
+// at some point I expect to use * pointers to omit fields which are not necessary
+// https://willnorris.com/2014/go-rest-apis-and-pointers/
+// https://stackoverflow.com/questions/47158987/how-to-update-mongodb-fields-with-omitempty-flag-in-golang-structure
