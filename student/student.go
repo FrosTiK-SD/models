@@ -48,7 +48,7 @@ type EducationDetails struct {
 
 type Academics struct {
 	JEERank           RankDetails        `json:"jeeRank" bson:"jeeRank"`
-	GATERank          RankDetails        `json:"gateRank" bson:"gateRank"`
+	GATERank          RankDetails        `json:"gateRank,omitempty" bson:"gateRank,omitempty"`
 	XthClass          EducationDetails   `json:"xClass" bson:"xClass"`
 	XIIthClass        EducationDetails   `json:"xiiClass" bson:"xiiClass"`
 	UnderGraduate     EducationDetails   `json:"underGraduate,omitempty" bson:"underGraduate,omitempty"`
@@ -85,8 +85,8 @@ type SocialProfiles struct {
 }
 
 type Batch struct {
-	StartYear int `json:"startYear,omitempty" bson:"startYear"`
-	EndYear   int `json:"endYear,omitempty" bson:"endYear"`
+	StartYear int `json:"startYear" bson:"startYear"`
+	EndYear   int `json:"endYear" bson:"endYear"`
 }
 
 type ParentsDetails struct {
@@ -121,13 +121,13 @@ type Student struct {
 	InstituteEmail string          `json:"instituteEmail" bson:"instituteEmail"`
 	Department     string          `json:"department" bson:"department"`
 	Course         constant.Course `json:"course" bson:"course"`
-	Specialisation string          `json:"specialisation" bson:"specialisation"`
+	Specialisation string          `json:"specialisation,omitempty" bson:"specialisation,omitempty"`
 
 	FirstName  string `json:"firstName" bson:"firstName"`
 	MiddleName string `json:"middleName" bson:"middleName"`
 	LastName   string `json:"lastName" bson:"lastName"`
 
-	ProfilePicture   misc.Attachment     `json:"profilePicture" bson:"profilePicture"`
+	ProfilePicture   misc.Attachment     `json:"profilePicture,omitempty" bson:"profilePicture,omitempty"`
 	Gender           constant.Gender     `json:"gender" bson:"gender"`
 	DOB              primitive.DateTime  `json:"dob" bson:"dob"`
 	PermanentAddress string              `json:"permanentAddress" bson:"permanentAddress"`
@@ -143,9 +143,27 @@ type Student struct {
 	SocialProfiles SocialProfiles   `json:"socialProfiles" bson:"socialProfiles"`
 
 	// metadata
+	Version     int                    `json:"version,omitempty" bson:"version,omitempty"`
 	UpdatedAt   primitive.DateTime     `json:"updatedAt" bson:"updatedAt"`
 	CreatedAt   primitive.DateTime     `json:"createdAt" bson:"createdAt"`
 	RawKeyStore map[string]interface{} `json:"raw_key_store" bson:"raw_key_store"`
+}
+
+type StudentProto struct {
+	ID               primitive.ObjectID   `json:"_id" bson:"_id"`
+	Groups           []primitive.ObjectID `json:"groups" bson:"groups"`
+	CompaniesAlloted []string             `json:"companiesAlloted" bson:"companiesAlloted"`
+
+	Batch          Batch           `json:"batch" bson:"batch"`
+	RollNo         int             `json:"rollNo" bson:"rollNo"`
+	InstituteEmail string          `json:"instituteEmail" bson:"instituteEmail"`
+	Department     string          `json:"department" bson:"department"`
+	Course         constant.Course `json:"course" bson:"course"`
+
+	// metadata
+	Version   int                `json:"version,omitempty" bson:"version,omitempty"`
+	UpdatedAt primitive.DateTime `json:"updatedAt" bson:"updatedAt"`
+	CreatedAt primitive.DateTime `json:"createdAt" bson:"createdAt"`
 }
 
 // at some point I expect to use * pointers to omit fields which are not necessary
