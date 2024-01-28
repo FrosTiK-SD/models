@@ -18,25 +18,25 @@ type RankDetails struct {
 	RankCategory ReservationCategory `bson:"rankCategory" json:"rankCategory,omitempty"`
 }
 
-type SemesterDetails struct {
-	One   float32 `json:"semesterOne,omitempty" bson:"semesterOne"`
-	Two   float32 `json:"semesterTwo,omitempty" bson:"semesterTwo"`
-	Three float32 `json:"semesterThree,omitempty" bson:"semesterThree"`
-	Four  float32 `json:"semesterFour,omitempty" bson:"semesterFour"`
-	Five  float32 `json:"semesterFive,omitempty" bson:"semesterFive"`
-	Six   float32 `json:"semesterSix,omitempty" bson:"semesterSix"`
-	Seven float32 `json:"semesterSeven,omitempty" bson:"semesterSeven"`
-	Eight float32 `json:"semesterEight,omitempty" bson:"semesterEight"`
-	Nine  float32 `json:"semesterNine,omitempty" bson:"semesterNine"`
-	Ten   float32 `json:"semesterTen,omitempty" bson:"semesterTen"`
+type SemesterSPI struct {
+	One   float32 `json:"One,omitempty" bson:"One"`
+	Two   float32 `json:"Two,omitempty" bson:"Two"`
+	Three float32 `json:"Three,omitempty" bson:"Three"`
+	Four  float32 `json:"Four,omitempty" bson:"Four"`
+	Five  float32 `json:"Five,omitempty" bson:"Five"`
+	Six   float32 `json:"Six,omitempty" bson:"Six"`
+	Seven float32 `json:"Seven,omitempty" bson:"Seven"`
+	Eight float32 `json:"Eight,omitempty" bson:"Eight"`
+	Nine  float32 `json:"Nine,omitempty" bson:"Nine"`
+	Ten   float32 `json:"Ten,omitempty" bson:"Ten"`
 }
 
-type SummerTermDetails struct {
-	One   float32 `json:"summerTermOne,omitempty" bson:"summerTermOne"`
-	Two   float32 `json:"summerTermTwo,omitempty" bson:"summerTermTwo"`
-	Three float32 `json:"summerTermThree,omitempty" bson:"summerTermThree"`
-	Four  float32 `json:"summerTermFour,omitempty" bson:"summerTermFour"`
-	Five  float32 `json:"summerTermFive,omitempty" bson:"summerTermFive"`
+type SummerTermSPI struct {
+	One   float32 `json:"One,omitempty" bson:"One"`
+	Two   float32 `json:"Two,omitempty" bson:"Two"`
+	Three float32 `json:"Three,omitempty" bson:"Three"`
+	Four  float32 `json:"Four,omitempty" bson:"Four"`
+	Five  float32 `json:"Five,omitempty" bson:"Five"`
 }
 
 type EducationDetails struct {
@@ -56,8 +56,8 @@ type Academics struct {
 	PostGraduate      EducationDetails   `json:"postGraduate" bson:"postGraduate"`
 	ThesisEndDate     primitive.DateTime `json:"thesisEndDate" bson:"thesisEndDate"`
 	EducationGap      int                `json:"educationGap" bson:"educationGap"`
-	SemesterDetails   SemesterDetails    `json:"semesterDetails" bson:"semesterDetails"`
-	SummerTermDetails SummerTermDetails  `json:"summerTermDetails" bson:"summerTermDetails"`
+	SemesterDetails   SemesterSPI        `json:"semesterSPI" bson:"semesterSPI"`
+	SummerTermDetails SummerTermSPI      `json:"summerTermSPI" bson:"summerTermSPI"`
 	CurrentCGPA       float32            `json:"currentCGPA,omitempty" bson:"currentCGPA"`
 	ActiveBacklogs    int                `json:"activeBacklogs" bson:"activeBacklogs"`
 	TotalBacklogs     int                `json:"totalBacklogs" bson:"totalBacklogs"`
@@ -101,6 +101,16 @@ type Extras struct {
 	Verification misc.Verification `bson:"verification" json:"verification,omitempty"`
 }
 
+type WorkExperience struct {
+	StartDate    primitive.DateTime `bson:"startDate" json:"startDate,omitempty"`
+	EndDate      primitive.DateTime `bson:"endDate" json:"endDate,omitempty"`
+	Organisation string             `bson:"organisation" json:"organisation,omitempty"`
+	Location     string             `bson:"location" json:"location,omitempty"`
+	Position     string             `bson:"position" json:"position"`
+	Details      string             `bson:"details" json:"details,omitempty"`
+	Verification misc.Verification  `bson:"verification" json:"verification,omitempty"`
+}
+
 type Student struct {
 	ID               primitive.ObjectID   `json:"_id" bson:"_id"`
 	Groups           []primitive.ObjectID `json:"groups" bson:"groups"`
@@ -128,8 +138,9 @@ type Student struct {
 	MotherTongue     string              `json:"motherTongue" bson:"motherTongue"`
 	ParentsDetails   ParentsDetails      `json:"parentsDetails" bson:"parentsDetails"`
 
-	Academics      Academics      `json:"academics" bson:"academics"`
-	SocialProfiles SocialProfiles `json:"socialProfiles" bson:"socialProfiles"`
+	Academics      Academics        `json:"academics" bson:"academics"`
+	WorkExperience []WorkExperience `json:"workExperience" bson:"workExperience"`
+	SocialProfiles SocialProfiles   `json:"socialProfiles" bson:"socialProfiles"`
 
 	// metadata
 	UpdatedAt   primitive.DateTime     `json:"updatedAt" bson:"updatedAt"`
