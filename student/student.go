@@ -9,7 +9,7 @@ import (
 
 type ReservationCategory struct {
 	Category string `json:"category,omitempty" bson:"category"`
-	IsPWD    bool   `json:"isPwd,omitempty" bson:"isPwD"`
+	IsPWD    bool   `json:"isPWD,omitempty" bson:"isPWD"`
 	IsEWS    bool   `json:"isEWS,omitempty" bson:"isEWS"`
 }
 
