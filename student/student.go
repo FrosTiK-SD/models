@@ -118,7 +118,7 @@ type Student struct {
 
 	Batch          Batch           `json:"batch" bson:"batch"`
 	RollNo         int             `json:"rollNo" bson:"rollNo"`
-	InstituteEmail string          `json:"instituteEmail" bson:"instituteEmail"`
+	InstituteEmail string          `json:"email" bson:"email"`
 	Department     string          `json:"department" bson:"department"`
 	Course         constant.Course `json:"course" bson:"course"`
 	Specialisation string          `json:"specialisation,omitempty" bson:"specialisation,omitempty"`
@@ -147,23 +147,6 @@ type Student struct {
 	UpdatedAt     primitive.DateTime     `json:"updatedAt" bson:"updatedAt"`
 	CreatedAt     primitive.DateTime     `json:"createdAt" bson:"createdAt"`
 	RawKeyStore   map[string]interface{} `json:"raw_key_store" bson:"raw_key_store"`
-}
-
-type StudentProto struct {
-	ID               primitive.ObjectID   `json:"_id" bson:"_id"`
-	Groups           []primitive.ObjectID `json:"groups" bson:"groups"`
-	CompaniesAlloted []string             `json:"companiesAlloted" bson:"companiesAlloted"`
-
-	Batch          Batch           `json:"batch" bson:"batch"`
-	RollNo         int             `json:"rollNo" bson:"rollNo"`
-	InstituteEmail string          `json:"instituteEmail" bson:"instituteEmail"`
-	Department     string          `json:"department" bson:"department"`
-	Course         constant.Course `json:"course" bson:"course"`
-
-	// metadata
-	StructVersion int                `json:"version,omitempty" bson:"version,omitempty"`
-	UpdatedAt     primitive.DateTime `json:"updatedAt" bson:"updatedAt"`
-	CreatedAt     primitive.DateTime `json:"createdAt" bson:"createdAt"`
 }
 
 // at some point I expect to use * pointers to omit fields which are not necessary
