@@ -147,6 +147,7 @@ type Student struct {
 	UpdatedAt     primitive.DateTime     `json:"updatedAt" bson:"updatedAt"`
 	CreatedAt     primitive.DateTime     `json:"createdAt" bson:"createdAt"`
 	RawKeyStore   map[string]interface{} `json:"raw_key_store" bson:"raw_key_store"`
+	DataErrors    []string               `json:"dataErrors" bson:"dataErrors"`
 }
 
 // at some point I expect to use * pointers to omit fields which are not necessary
