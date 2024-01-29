@@ -58,7 +58,7 @@ type Academics struct {
 	EducationGap      int                `json:"educationGap" bson:"educationGap"`
 	SemesterDetails   SemesterSPI        `json:"semesterSPI" bson:"semesterSPI"`
 	SummerTermDetails SummerTermSPI      `json:"summerTermSPI" bson:"summerTermSPI"`
-	CurrentCGPA       float32            `json:"currentCGPA,omitempty" bson:"currentCGPA"`
+	CurrentCGPA       float32            `json:"currentCGPA" bson:"currentCGPA"`
 	ActiveBacklogs    int                `json:"activeBacklogs" bson:"activeBacklogs"`
 	TotalBacklogs     int                `json:"totalBacklogs" bson:"totalBacklogs"`
 
@@ -124,7 +124,7 @@ type Student struct {
 	Specialisation string          `json:"specialisation,omitempty" bson:"specialisation,omitempty"`
 
 	FirstName  string `json:"firstName" bson:"firstName"`
-	MiddleName string `json:"middleName" bson:"middleName"`
+	MiddleName string `json:"middleName,omitempty" bson:"middleName,omitempty"`
 	LastName   string `json:"lastName" bson:"lastName"`
 
 	ProfilePicture   misc.Attachment     `json:"profilePicture,omitempty" bson:"profilePicture,omitempty"`
@@ -139,7 +139,7 @@ type Student struct {
 	ParentsDetails   ParentsDetails      `json:"parentsDetails" bson:"parentsDetails"`
 
 	Academics      Academics        `json:"academics" bson:"academics"`
-	WorkExperience []WorkExperience `json:"workExperience,omitempty" bson:"workExperience,omitempty"`
+	WorkExperience []WorkExperience `json:"workExperience" bson:"workExperience"`
 	SocialProfiles SocialProfiles   `json:"socialProfiles" bson:"socialProfiles"`
 
 	// metadata
