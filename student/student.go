@@ -72,7 +72,7 @@ type SocialProfile struct {
 }
 
 type SocialProfiles struct {
-	LinkedIn       SocialProfile `json:"linkedIn,omitempty" bson:"linkedIn,omitempty"`
+	LinkedIn       SocialProfile `json:"linkedIn" bson:"linkedIn"`
 	Github         SocialProfile `json:"github,omitempty" bson:"github,omitempty"`
 	MicrosoftTeams SocialProfile `json:"microsoftTeams,omitempty" bson:"microsoftTeams,omitempty"`
 	Skype          SocialProfile `json:"skype,omitempty" bson:"skype,omitempty"`
@@ -91,9 +91,9 @@ type Batch struct {
 
 type ParentsDetails struct {
 	FatherName       string `json:"fatherName" bson:"fatherName"`
-	FatherOccupation string `json:"fatherOccupation" bson:"fatherOccupation"`
+	FatherOccupation string `json:"fatherOccupation,omitempty" bson:"fatherOccupation,omitempty"`
 	MotherName       string `json:"motherName" bson:"motherName"`
-	MotherOccupation string `json:"motherOccupation" bson:"motherOccupation"`
+	MotherOccupation string `json:"motherOccupation,omitempty" bson:"motherOccupation,omitempty"`
 }
 
 type Extras struct {
@@ -112,7 +112,7 @@ type WorkExperience struct {
 }
 
 type Student struct {
-	ID               primitive.ObjectID   `json:"_id" bson:"_id"`
+	Id               primitive.ObjectID   `json:"_id" bson:"_id"`
 	Groups           []primitive.ObjectID `json:"groups" bson:"groups"`
 	CompaniesAlloted []string             `json:"companiesAlloted" bson:"companiesAlloted"`
 
