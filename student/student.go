@@ -19,31 +19,31 @@ type RankDetails struct {
 }
 
 type SemesterSPI struct {
-	One   float32 `json:"One,omitempty" bson:"One,omitempty"`
-	Two   float32 `json:"Two,omitempty" bson:"Two,omitempty"`
-	Three float32 `json:"Three,omitempty" bson:"Three,omitempty"`
-	Four  float32 `json:"Four,omitempty" bson:"Four,omitempty"`
-	Five  float32 `json:"Five,omitempty" bson:"Five,omitempty"`
-	Six   float32 `json:"Six,omitempty" bson:"Six,omitempty"`
-	Seven float32 `json:"Seven,omitempty" bson:"Seven,omitempty"`
-	Eight float32 `json:"Eight,omitempty" bson:"Eight,omitempty"`
-	Nine  float32 `json:"Nine,omitempty" bson:"Nine,omitempty"`
-	Ten   float32 `json:"Ten,omitempty" bson:"Ten,omitempty"`
+	One   float64 `json:"One,omitempty" bson:"One,omitempty"`
+	Two   float64 `json:"Two,omitempty" bson:"Two,omitempty"`
+	Three float64 `json:"Three,omitempty" bson:"Three,omitempty"`
+	Four  float64 `json:"Four,omitempty" bson:"Four,omitempty"`
+	Five  float64 `json:"Five,omitempty" bson:"Five,omitempty"`
+	Six   float64 `json:"Six,omitempty" bson:"Six,omitempty"`
+	Seven float64 `json:"Seven,omitempty" bson:"Seven,omitempty"`
+	Eight float64 `json:"Eight,omitempty" bson:"Eight,omitempty"`
+	Nine  float64 `json:"Nine,omitempty" bson:"Nine,omitempty"`
+	Ten   float64 `json:"Ten,omitempty" bson:"Ten,omitempty"`
 }
 
 type SummerTermSPI struct {
-	One   float32 `json:"One,omitempty" bson:"One,omitempty"`
-	Two   float32 `json:"Two,omitempty" bson:"Two,omitempty"`
-	Three float32 `json:"Three,omitempty" bson:"Three,omitempty"`
-	Four  float32 `json:"Four,omitempty" bson:"Four,omitempty"`
-	Five  float32 `json:"Five,omitempty" bson:"Five,omitempty"`
+	One   float64 `json:"One,omitempty" bson:"One,omitempty"`
+	Two   float64 `json:"Two,omitempty" bson:"Two,omitempty"`
+	Three float64 `json:"Three,omitempty" bson:"Three,omitempty"`
+	Four  float64 `json:"Four,omitempty" bson:"Four,omitempty"`
+	Five  float64 `json:"Five,omitempty" bson:"Five,omitempty"`
 }
 
 type EducationDetails struct {
 	Certification string  `bson:"certification" json:"certification"`
 	Institute     string  `bson:"institute" json:"institute"`
 	Year          int     `bson:"year" json:"year"`
-	Score         float32 `bson:"score" json:"score"`
+	Score         float64 `bson:"score" json:"score"`
 }
 
 type Academics struct {
@@ -58,7 +58,7 @@ type Academics struct {
 	EducationGap      int                `json:"educationGap" bson:"educationGap"`
 	SemesterDetails   SemesterSPI        `json:"semesterSPI" bson:"semesterSPI"`
 	SummerTermDetails SummerTermSPI      `json:"summerTermSPI" bson:"summerTermSPI"`
-	CurrentCGPA       float32            `json:"currentCGPA" bson:"currentCGPA"`
+	CurrentCGPA       float64            `json:"currentCGPA" bson:"currentCGPA"`
 	ActiveBacklogs    int                `json:"activeBacklogs" bson:"activeBacklogs"`
 	TotalBacklogs     int                `json:"totalBacklogs" bson:"totalBacklogs"`
 
