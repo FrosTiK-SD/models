@@ -38,6 +38,16 @@ type ForumPost struct {
 	UpdatedAt primitive.DateTime   `bson:"updatedAt,omitempty" json:"updatedAt,omitempty"`
 }
 
+type NewForumPost struct {
+	Title            string               `bson:"title,omitempty" json:"title,omitempty"`
+	Type             ForumPostType        `bson:"type,omitempty" json:"type,omitempty"`
+	Tags             []string             `bson:"tags,omitempty" json:"tags,omitempty"`
+	RelatedCompanies []primitive.ObjectID `bson:"relatedCompanies,omitempty" json:"relatedCompanies,omitempty"`
+	Notify           NotifyForum          `bson:"notify,omitempty" json:"notify,omitempty"`
+	Content          []ForumPostContent   `bson:"content,omitempty" json:"content,omitempty"`
+	Pinned           int                  `bson:"pinned,omitempty" json:"pinned,omitempty"`
+}
+
 type ForumPostContent struct {
 	TopGenericContent    map[string]interface{} `bson:"topGenericContent,omitempty" json:"topGenericContent,omitempty"`
 	BottomGenericContent map[string]interface{} `bson:"bottomGenericContent,omitempty" json:"bottomGenericContent,omitempty"`
