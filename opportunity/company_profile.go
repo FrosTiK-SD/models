@@ -20,20 +20,41 @@ const (
 	INTERN    ListingType = "intern"
 )
 
+type Deadlines struct {
+	PPTDate       *primitive.DateTime `bson:"pptDate" json:"pptDate"`
+	ExamDate      *primitive.DateTime `bson:"examDate" json:"examDate"`
+	InterviewDate *primitive.DateTime `bson:"interviewDate" json:"interviewDate"`
+}
+
+type CompensationBreakup struct {
+	TotalCTC *string `bson:"totalCTC" json:"totalCTC"`
+	Fixed    *string `bson:"fixed" json:"fixed"`
+}
+
+type CompensationDetails struct {
+	BTech *CompensationBreakup `bson:"btech" json:"btech"`
+	IDD   *CompensationBreakup `bson:"idd" json:"idd"`
+	MTech *CompensationBreakup `bson:"mtech" json:"mtech"`
+	PhD   *CompensationBreakup `bson:"phd" json:"phd"`
+}
+
 type CompanyProfile struct {
-	ID                     primitive.ObjectID     `bson:"_id" json:"_id,omitempty"`
-	Company                primitive.ObjectID     `bson:"company" json:"company,omitempty"`
-	Criterias              []primitive.ObjectID   `bson:"criterias" json:"criterias,omitempty"`
-	Attachments            []misc.Attachment      `bson:"attachments" json:"attachments,omitempty"`
-	Slot                   primitive.ObjectID     `bson:"slot" json:"slot,omitempty"`
-	DetailsRequestedSchema map[string]interface{} `bson:"detailsRequestedSchema" json:"detailsRequestedSchema,omitempty"`
-
-	ApplicationStartTime primitive.DateTime `bson:"applicationStartTime" json:"applicationStartTime,omitempty"`
-	ApplicationEndTime   primitive.DateTime `bson:"applicationEndTime" json:"applicationEndTime,omitempty"`
-	ListingStatus        ListingStatus      `bson:"listingStatus" json:"listingStatus,omitempty"`
-	ListingType          ListingType        `bson:"listingType" json:"listingType,omitempty"`
-
-	// metadata
-	CreatedAt primitive.DateTime `bson:"createdAt" json:"createdAt,omitempty"`
-	UpdatedAt primitive.DateTime `bson:"updatedAt" json:"updatedAt,omitempty"`
+	Id                     primitive.ObjectID      `bson:"_id" json:"_id"`
+	Company                *primitive.ObjectID     `bson:"company" json:"company"`
+	Role                   *string                 `bson:"role" json:"role"`
+	Batch                  *string                 `bson:"batch" json:"batch"`
+	Deadlines              Deadlines               `bson:"deadlines" json:"deadlines"`
+	CompensationDetails    CompensationDetails     `bson:"compensationDetails" json:"compensationDetails"`
+	JD                     *string                 `bson:"jd" json:"jd"`
+	Criterias              *[]primitive.ObjectID   `bson:"criterias" json:"criterias"`
+	Spocs                  *[]primitive.ObjectID   `bson:"spocs" json:"spocs"`
+	Attachments            []misc.Attachment       `bson:"attachments" json:"attachments,omitempty"`
+	ApplicationStartTime   primitive.DateTime      `bson:"applicationStartTime" json:"applicationStartTime,omitempty"`
+	ApplicationEndTime     primitive.DateTime      `bson:"applicationEndTime" json:"applicationEndTime,omitempty"`
+	Slot                   *primitive.ObjectID     `bson:"slot" json:"slot"`
+	DetailsRequestedSchema *map[string]interface{} `bson:"detailsRequestedSchema" json:"detailsRequestedSchema"`
+	ListingStatus          ListingStatus           `bson:"listingStatus" json:"listingStatus,omitempty"`
+	ListingType            ListingType             `bson:"listingType" json:"listingType,omitempty"`
+	CreatedAt              primitive.DateTime      `bson:"createdAt" json:"createdAt"`
+	UpdatedAt              primitive.DateTime      `bson:"updatedAt" json:"updatedAt"`
 }
