@@ -29,6 +29,7 @@ type Deadlines struct {
 type CompensationBreakup struct {
 	TotalCTC *string `bson:"totalCTC" json:"totalCTC"`
 	Fixed    *string `bson:"fixed" json:"fixed"`
+	Extras   *string `bson:"extras" json:"extras"`
 }
 
 type CompensationDetails struct {
