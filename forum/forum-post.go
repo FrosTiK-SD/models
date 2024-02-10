@@ -42,7 +42,7 @@ type ForumPost struct {
 }
 
 type ForumPostContent struct {
-	TopGenericContent    map[string]interface{} `bson:"topGenericContent,omitempty" json:"topGenericContent,omitempty"`
-	BottomGenericContent map[string]interface{} `bson:"bottomGenericContent,omitempty" json:"bottomGenericContent,omitempty"`
-	StudentList          []primitive.ObjectID   `bson:"studentList,omitempty" json:"studentList,omitempty"`
+	TopGenericContent    string               `bson:"topGenericContent,omitempty" json:"topGenericContent,omitempty"`
+	BottomGenericContent string               `bson:"bottomGenericContent,omitempty" json:"bottomGenericContent,omitempty"`
+	StudentList          []primitive.ObjectID `bson:"studentList,omitempty" json:"studentList,omitempty"`
 }
