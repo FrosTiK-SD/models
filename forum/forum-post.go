@@ -39,6 +39,7 @@ type ForumPost struct {
 	EditedBy  []primitive.ObjectID `bson:"editedBy,omitempty" json:"editedBy,omitempty"`
 	CreatedAt primitive.DateTime   `bson:"createdAt,omitempty" json:"createdAt,omitempty"`
 	UpdatedAt primitive.DateTime   `bson:"updatedAt,omitempty" json:"updatedAt,omitempty"`
+	RawText   string               `bson:"rawText,omitempty" json:"rawText,omitempty"`
 }
 
 type ForumPostContent struct {
