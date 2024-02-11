@@ -13,7 +13,7 @@ type ProfileApplication struct {
 }
 
 type Application struct {
-	ID                     primitive.ObjectID      `bson:"_id" json:"_id,omitempty"`
+	ID                     primitive.ObjectID      `bson:"_id" json:"_id"`
 	Opportunity            primitive.ObjectID      `bson:"opportunity" json:"opportunity,omitempty"`
 	Student                primitive.ObjectID      `bson:"student" json:"student,omitempty"`
 	DetailsRequestedSchema *map[string]interface{} `bson:"detailsRequestedSchema" json:"detailsRequestedSchema"`
