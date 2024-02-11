@@ -49,7 +49,7 @@ type CompensationBreakup struct {
 	Extras   *string            `bson:"extras" json:"extras"`
 }
 
-type BranchCompensationDetails map[constant.Branch]CompensationBreakup
+type BranchCompensationDetails map[constant.Branch]*CompensationBreakup
 
 type CourseCompensationDetails struct {
 	BTech *BranchCompensationDetails `bson:"btech" json:"btech"`
