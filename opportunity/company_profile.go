@@ -7,17 +7,23 @@ import (
 
 type ListingStatus string
 type ListingType string
+type CompensationType string
 
 const (
-	LISTED             ListingStatus = "listed"
-	UNLISTED           ListingStatus = "unlisted"
-	UNDER_BRANCH_ISSUE ListingStatus = "under_branch_issue"
-	CLOSED             ListingStatus = "closed"
+	LISTED             ListingStatus = "LISTED"
+	UNLISTED           ListingStatus = "UNLISTED"
+	UNDER_BRANCH_ISSUE ListingStatus = "UNDER_BRANCH_ISSUE"
+	CLOSED             ListingStatus = "CLOSED"
 )
 
 const (
-	PLACEMENT ListingType = "placement"
-	INTERN    ListingType = "intern"
+	PLACEMENT ListingType = "PLACEMENT"
+	INTERN    ListingType = "INTERN"
+)
+
+const (
+	PER_YEAR  ListingType = "PER_YEAR"
+	PER_MONTH ListingType = "PER_MONTH"
 )
 
 type Deadlines struct {
@@ -26,9 +32,14 @@ type Deadlines struct {
 	InterviewDate *primitive.DateTime `bson:"interviewDate" json:"interviewDate"`
 }
 
+type Compensation struct {
+	misc.Currency
+	CompensationType CompensationType `bson:"compensationType" json:"compensationType"`
+}
+
 type CompensationRange struct {
-	Min *misc.Currency `bson:"min" json:"min"`
-	Max *misc.Currency `bson:"max" json:"max"`
+	Min *Compensation `bson:"min" json:"min"`
+	Max *Compensation `bson:"max" json:"max"`
 }
 
 type CompensationBreakup struct {
