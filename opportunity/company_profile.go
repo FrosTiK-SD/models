@@ -27,9 +27,9 @@ type Deadlines struct {
 }
 
 type CompensationBreakup struct {
-	TotalCTC *string `bson:"totalCTC" json:"totalCTC"`
-	Fixed    *string `bson:"fixed" json:"fixed"`
-	Extras   *string `bson:"extras" json:"extras"`
+	TotalCTC *misc.Currency `bson:"totalCTC" json:"totalCTC"`
+	Fixed    *misc.Currency `bson:"fixed" json:"fixed"`
+	Extras   *string        `bson:"extras" json:"extras"`
 }
 
 type CompensationDetails struct {
@@ -56,6 +56,7 @@ type CompanyProfile struct {
 	DetailsRequestedSchema *map[string]interface{} `bson:"detailsRequestedSchema" json:"detailsRequestedSchema"`
 	ListingStatus          ListingStatus           `bson:"listingStatus" json:"listingStatus,omitempty"`
 	ListingType            ListingType             `bson:"listingType" json:"listingType,omitempty"`
+	Activities             []misc.Activity         `bson:"activities" json:"activities"`
 	CreatedAt              primitive.DateTime      `bson:"createdAt" json:"createdAt"`
 	UpdatedAt              primitive.DateTime      `bson:"updatedAt" json:"updatedAt"`
 }
