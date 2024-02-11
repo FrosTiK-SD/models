@@ -1,6 +1,7 @@
 package opportunity
 
 import (
+	"github.com/FrosTiK-SD/models/constant"
 	"github.com/FrosTiK-SD/models/misc"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
@@ -48,11 +49,13 @@ type CompensationBreakup struct {
 	Extras   *string            `bson:"extras" json:"extras"`
 }
 
+type BranchCompensationDetails map[constant.Branch]CompensationBreakup
+
 type CourseCompensationDetails struct {
-	BTech *CompensationBreakup `bson:"btech" json:"btech"`
-	IDD   *CompensationBreakup `bson:"idd" json:"idd"`
-	MTech *CompensationBreakup `bson:"mtech" json:"mtech"`
-	PhD   *CompensationBreakup `bson:"phd" json:"phd"`
+	BTech *BranchCompensationDetails `bson:"btech" json:"btech"`
+	IDD   *BranchCompensationDetails `bson:"idd" json:"idd"`
+	MTech *BranchCompensationDetails `bson:"mtech" json:"mtech"`
+	PhD   *BranchCompensationDetails `bson:"phd" json:"phd"`
 }
 
 type CompanyProfile struct {
