@@ -12,6 +12,7 @@ type Opportunity struct {
 	DetailsRequestedSchema *map[string]interface{} `bson:"detailsRequestedSchema" json:"detailsRequestedSchema"`
 	Attachments            []misc.Attachment       `bson:"attachments" json:"attachments,omitempty"`
 	Extras                 *string                 `bson:"extras" json:"extras,omitempty"`
+	MaxAllowedProfiles     int                     `bson:"maxAllowedProfiles" json:"maxAllowedProfiles"`
 
 	// metadata
 	CreatedAt primitive.DateTime `bson:"createdAt" json:"createdAt"`
