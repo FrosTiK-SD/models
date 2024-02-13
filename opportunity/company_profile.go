@@ -1,7 +1,6 @@
 package opportunity
 
 import (
-	"github.com/FrosTiK-SD/models/constant"
 	"github.com/FrosTiK-SD/models/misc"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
@@ -49,9 +48,88 @@ type CompensationBreakup struct {
 	Extras   *string            `bson:"extras" json:"extras"`
 }
 
-type BranchCompensationDetails map[constant.Branch]*CompensationBreakup
+type BTechCompensation struct {
+	APD *CompensationBreakup `bson:"APD" json:"APD"`
+	CER *CompensationBreakup `bson:"CER" json:"CER"`
+	CHE *CompensationBreakup `bson:"CHE" json:"CHE"`
+	CIV *CompensationBreakup `bson:"CIV" json:"CIV"`
+	CSE *CompensationBreakup `bson:"CSE" json:"CSE"`
+	ECE *CompensationBreakup `bson:"ECE" json:"ECE"`
+	EEE *CompensationBreakup `bson:"EEE" json:"EEE"`
+	MEC *CompensationBreakup `bson:"MEC" json:"MEC"`
+	MET *CompensationBreakup `bson:"MET" json:"MET"`
+	MIN *CompensationBreakup `bson:"MIN" json:"MIN"`
+	MST *CompensationBreakup `bson:"MST" json:"MST"`
+	PHY *CompensationBreakup `bson:"PHY" json:"PHY"`
+}
 
-type CourseCompensationDetails map[constant.Course]*BranchCompensationDetails
+type IDDCompensation struct {
+	APD *CompensationBreakup `bson:"APD" json:"APD"`
+	BCE *CompensationBreakup `bson:"BCE" json:"BCE"`
+	BME *CompensationBreakup `bson:"BME" json:"BME"`
+	CER *CompensationBreakup `bson:"CER" json:"CER"`
+	CHY *CompensationBreakup `bson:"CHY" json:"CHY"`
+	CIV *CompensationBreakup `bson:"CIV" json:"CIV"`
+	CSE *CompensationBreakup `bson:"CSE" json:"CSE"`
+	ECE *CompensationBreakup `bson:"ECE" json:"ECE"`
+	EEE *CompensationBreakup `bson:"EEE" json:"EEE"`
+	MAT *CompensationBreakup `bson:"MAT" json:"MAT"`
+	MEC *CompensationBreakup `bson:"MEC" json:"MEC"`
+	MET *CompensationBreakup `bson:"MET" json:"MET"`
+	MIN *CompensationBreakup `bson:"MIN" json:"MIN"`
+	MST *CompensationBreakup `bson:"MST" json:"MST"`
+	PHE *CompensationBreakup `bson:"PHE" json:"PHE"`
+	PHY *CompensationBreakup `bson:"PHY" json:"PHY"`
+}
+
+type MTechCompensation struct {
+	APD *CompensationBreakup `bson:"APD" json:"APD"`
+	BCE *CompensationBreakup `bson:"BCE" json:"BCE"`
+	BME *CompensationBreakup `bson:"BME" json:"BME"`
+	CER *CompensationBreakup `bson:"CER" json:"CER"`
+	CHE *CompensationBreakup `bson:"CHE" json:"CHE"`
+	CHY *CompensationBreakup `bson:"CHY" json:"CHY"`
+	CIV *CompensationBreakup `bson:"CIV" json:"CIV"`
+	CSE *CompensationBreakup `bson:"CSE" json:"CSE"`
+	DSE *CompensationBreakup `bson:"DSE" json:"DSE"`
+	ECE *CompensationBreakup `bson:"ECE" json:"ECE"`
+	EEE *CompensationBreakup `bson:"EEE" json:"EEE"`
+	MAT *CompensationBreakup `bson:"MAT" json:"MAT"`
+	MEC *CompensationBreakup `bson:"MEC" json:"MEC"`
+	MET *CompensationBreakup `bson:"MET" json:"MET"`
+	MIN *CompensationBreakup `bson:"MIN" json:"MIN"`
+	MST *CompensationBreakup `bson:"MST" json:"MST"`
+	PHE *CompensationBreakup `bson:"PHE" json:"PHE"`
+	PHY *CompensationBreakup `bson:"PHY" json:"PHY"`
+}
+
+type PhDCompensation struct {
+	APD *CompensationBreakup `bson:"APD" json:"APD"`
+	BCE *CompensationBreakup `bson:"BCE" json:"BCE"`
+	BME *CompensationBreakup `bson:"BME" json:"BME"`
+	CER *CompensationBreakup `bson:"CER" json:"CER"`
+	CHE *CompensationBreakup `bson:"CHE" json:"CHE"`
+	CHY *CompensationBreakup `bson:"CHY" json:"CHY"`
+	CIV *CompensationBreakup `bson:"CIV" json:"CIV"`
+	CSE *CompensationBreakup `bson:"CSE" json:"CSE"`
+	DSE *CompensationBreakup `bson:"DSE" json:"DSE"`
+	ECE *CompensationBreakup `bson:"ECE" json:"ECE"`
+	EEE *CompensationBreakup `bson:"EEE" json:"EEE"`
+	MAT *CompensationBreakup `bson:"MAT" json:"MAT"`
+	MEC *CompensationBreakup `bson:"MEC" json:"MEC"`
+	MET *CompensationBreakup `bson:"MET" json:"MET"`
+	MIN *CompensationBreakup `bson:"MIN" json:"MIN"`
+	MST *CompensationBreakup `bson:"MST" json:"MST"`
+	PHE *CompensationBreakup `bson:"PHE" json:"PHE"`
+	PHY *CompensationBreakup `bson:"PHY" json:"PHY"`
+}
+
+type CourseCompensationDetails struct {
+	BTech *BTechCompensation `bson:"BTECH" json:"BTECH"`
+	IDD   *IDDCompensation   `bson:"IDD" json:"IDD"`
+	MTech *MTechCompensation `bson:"MTECH" json:"MTECH"`
+	PhD   *PhDCompensation   `bson:"PHD" json:"PHD"`
+}
 
 type CompanyProfile struct {
 	Id                     primitive.ObjectID        `bson:"_id" json:"_id"`
