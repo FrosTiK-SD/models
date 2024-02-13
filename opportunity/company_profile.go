@@ -23,8 +23,8 @@ const (
 )
 
 const (
-	PER_YEAR  ListingType = "PER_YEAR"
-	PER_MONTH ListingType = "PER_MONTH"
+	PER_YEAR  CompensationType = "PER_YEAR"
+	PER_MONTH CompensationType = "PER_MONTH"
 )
 
 type Deadlines struct {
@@ -51,12 +51,7 @@ type CompensationBreakup struct {
 
 type BranchCompensationDetails map[constant.Branch]*CompensationBreakup
 
-type CourseCompensationDetails struct {
-	BTech *BranchCompensationDetails `bson:"btech" json:"btech"`
-	IDD   *BranchCompensationDetails `bson:"idd" json:"idd"`
-	MTech *BranchCompensationDetails `bson:"mtech" json:"mtech"`
-	PhD   *BranchCompensationDetails `bson:"phd" json:"phd"`
-}
+type CourseCompensationDetails map[constant.Course]*BranchCompensationDetails
 
 type CompanyProfile struct {
 	Id                     primitive.ObjectID        `bson:"_id" json:"_id"`
