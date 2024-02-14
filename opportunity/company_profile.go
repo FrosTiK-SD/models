@@ -50,86 +50,86 @@ type CompensationBreakup struct {
 }
 
 type BTechCompensation struct {
-	APD *CompensationBreakup `bson:"APD" json:"APD"`
-	CER *CompensationBreakup `bson:"CER" json:"CER"`
-	CHE *CompensationBreakup `bson:"CHE" json:"CHE"`
-	CIV *CompensationBreakup `bson:"CIV" json:"CIV"`
-	CSE *CompensationBreakup `bson:"CSE" json:"CSE"`
-	ECE *CompensationBreakup `bson:"ECE" json:"ECE"`
-	EEE *CompensationBreakup `bson:"EEE" json:"EEE"`
-	MEC *CompensationBreakup `bson:"MEC" json:"MEC"`
-	MET *CompensationBreakup `bson:"MET" json:"MET"`
-	MIN *CompensationBreakup `bson:"MIN" json:"MIN"`
-	MST *CompensationBreakup `bson:"MST" json:"MST"`
-	PHY *CompensationBreakup `bson:"PHY" json:"PHY"`
+	APD *CompensationBreakup `bson:"apd" json:"apd"`
+	CER *CompensationBreakup `bson:"cer" json:"cer"`
+	CHE *CompensationBreakup `bson:"che" json:"che"`
+	CIV *CompensationBreakup `bson:"civ" json:"civ"`
+	CSE *CompensationBreakup `bson:"cse" json:"cse"`
+	ECE *CompensationBreakup `bson:"ece" json:"ece"`
+	EEE *CompensationBreakup `bson:"eee" json:"eee"`
+	MEC *CompensationBreakup `bson:"mec" json:"mec"`
+	MET *CompensationBreakup `bson:"met" json:"met"`
+	MIN *CompensationBreakup `bson:"min" json:"min"`
+	MST *CompensationBreakup `bson:"mst" json:"mst"`
+	PHY *CompensationBreakup `bson:"phy" json:"phy"`
 }
 
 type IDDCompensation struct {
-	APD *CompensationBreakup `bson:"APD" json:"APD"`
-	BCE *CompensationBreakup `bson:"BCE" json:"BCE"`
-	BME *CompensationBreakup `bson:"BME" json:"BME"`
-	CER *CompensationBreakup `bson:"CER" json:"CER"`
-	CHY *CompensationBreakup `bson:"CHY" json:"CHY"`
-	CIV *CompensationBreakup `bson:"CIV" json:"CIV"`
-	CSE *CompensationBreakup `bson:"CSE" json:"CSE"`
-	ECE *CompensationBreakup `bson:"ECE" json:"ECE"`
-	EEE *CompensationBreakup `bson:"EEE" json:"EEE"`
-	MAT *CompensationBreakup `bson:"MAT" json:"MAT"`
-	MEC *CompensationBreakup `bson:"MEC" json:"MEC"`
-	MET *CompensationBreakup `bson:"MET" json:"MET"`
-	MIN *CompensationBreakup `bson:"MIN" json:"MIN"`
-	MST *CompensationBreakup `bson:"MST" json:"MST"`
-	PHE *CompensationBreakup `bson:"PHE" json:"PHE"`
-	PHY *CompensationBreakup `bson:"PHY" json:"PHY"`
+	APD *CompensationBreakup `bson:"apd" json:"apd"`
+	BCE *CompensationBreakup `bson:"bce" json:"bce"`
+	BME *CompensationBreakup `bson:"bme" json:"bme"`
+	CER *CompensationBreakup `bson:"cer" json:"cer"`
+	CHY *CompensationBreakup `bson:"chy" json:"chy"`
+	CIV *CompensationBreakup `bson:"civ" json:"civ"`
+	CSE *CompensationBreakup `bson:"cse" json:"cse"`
+	ECE *CompensationBreakup `bson:"ece" json:"ece"`
+	EEE *CompensationBreakup `bson:"eee" json:"eee"`
+	MAT *CompensationBreakup `bson:"mat" json:"mat"`
+	MEC *CompensationBreakup `bson:"mec" json:"mec"`
+	MET *CompensationBreakup `bson:"met" json:"met"`
+	MIN *CompensationBreakup `bson:"min" json:"min"`
+	MST *CompensationBreakup `bson:"mst" json:"mst"`
+	PHE *CompensationBreakup `bson:"phe" json:"phe"`
+	PHY *CompensationBreakup `bson:"phy" json:"phy"`
 }
 
 type MTechCompensation struct {
-	APD *CompensationBreakup `bson:"APD" json:"APD"`
-	BCE *CompensationBreakup `bson:"BCE" json:"BCE"`
-	BME *CompensationBreakup `bson:"BME" json:"BME"`
-	CER *CompensationBreakup `bson:"CER" json:"CER"`
-	CHE *CompensationBreakup `bson:"CHE" json:"CHE"`
-	CHY *CompensationBreakup `bson:"CHY" json:"CHY"`
-	CIV *CompensationBreakup `bson:"CIV" json:"CIV"`
-	CSE *CompensationBreakup `bson:"CSE" json:"CSE"`
-	DSE *CompensationBreakup `bson:"DSE" json:"DSE"`
-	ECE *CompensationBreakup `bson:"ECE" json:"ECE"`
-	EEE *CompensationBreakup `bson:"EEE" json:"EEE"`
-	MAT *CompensationBreakup `bson:"MAT" json:"MAT"`
-	MEC *CompensationBreakup `bson:"MEC" json:"MEC"`
-	MET *CompensationBreakup `bson:"MET" json:"MET"`
-	MIN *CompensationBreakup `bson:"MIN" json:"MIN"`
-	MST *CompensationBreakup `bson:"MST" json:"MST"`
-	PHE *CompensationBreakup `bson:"PHE" json:"PHE"`
-	PHY *CompensationBreakup `bson:"PHY" json:"PHY"`
+	APD *CompensationBreakup `bson:"apd" json:"apd"`
+	BCE *CompensationBreakup `bson:"bce" json:"bce"`
+	BME *CompensationBreakup `bson:"bme" json:"bme"`
+	CER *CompensationBreakup `bson:"cer" json:"cer"`
+	CHE *CompensationBreakup `bson:"che" json:"che"`
+	CHY *CompensationBreakup `bson:"chy" json:"chy"`
+	CIV *CompensationBreakup `bson:"civ" json:"civ"`
+	CSE *CompensationBreakup `bson:"cse" json:"cse"`
+	DSE *CompensationBreakup `bson:"dse" json:"dse"`
+	ECE *CompensationBreakup `bson:"ece" json:"ece"`
+	EEE *CompensationBreakup `bson:"eee" json:"eee"`
+	MAT *CompensationBreakup `bson:"mat" json:"mat"`
+	MEC *CompensationBreakup `bson:"mec" json:"mec"`
+	MET *CompensationBreakup `bson:"met" json:"met"`
+	MIN *CompensationBreakup `bson:"min" json:"min"`
+	MST *CompensationBreakup `bson:"mst" json:"mst"`
+	PHE *CompensationBreakup `bson:"phe" json:"phe"`
+	PHY *CompensationBreakup `bson:"phy" json:"phy"`
 }
 
 type PhDCompensation struct {
-	APD *CompensationBreakup `bson:"APD" json:"APD"`
-	BCE *CompensationBreakup `bson:"BCE" json:"BCE"`
-	BME *CompensationBreakup `bson:"BME" json:"BME"`
-	CER *CompensationBreakup `bson:"CER" json:"CER"`
-	CHE *CompensationBreakup `bson:"CHE" json:"CHE"`
-	CHY *CompensationBreakup `bson:"CHY" json:"CHY"`
-	CIV *CompensationBreakup `bson:"CIV" json:"CIV"`
-	CSE *CompensationBreakup `bson:"CSE" json:"CSE"`
-	DSE *CompensationBreakup `bson:"DSE" json:"DSE"`
-	ECE *CompensationBreakup `bson:"ECE" json:"ECE"`
-	EEE *CompensationBreakup `bson:"EEE" json:"EEE"`
-	MAT *CompensationBreakup `bson:"MAT" json:"MAT"`
-	MEC *CompensationBreakup `bson:"MEC" json:"MEC"`
-	MET *CompensationBreakup `bson:"MET" json:"MET"`
-	MIN *CompensationBreakup `bson:"MIN" json:"MIN"`
-	MST *CompensationBreakup `bson:"MST" json:"MST"`
-	PHE *CompensationBreakup `bson:"PHE" json:"PHE"`
-	PHY *CompensationBreakup `bson:"PHY" json:"PHY"`
+	APD *CompensationBreakup `bson:"apd" json:"apd"`
+	BCE *CompensationBreakup `bson:"bce" json:"bce"`
+	BME *CompensationBreakup `bson:"bme" json:"bme"`
+	CER *CompensationBreakup `bson:"cer" json:"cer"`
+	CHE *CompensationBreakup `bson:"che" json:"che"`
+	CHY *CompensationBreakup `bson:"chy" json:"chy"`
+	CIV *CompensationBreakup `bson:"civ" json:"civ"`
+	CSE *CompensationBreakup `bson:"cse" json:"cse"`
+	DSE *CompensationBreakup `bson:"dse" json:"dse"`
+	ECE *CompensationBreakup `bson:"ece" json:"ece"`
+	EEE *CompensationBreakup `bson:"eee" json:"eee"`
+	MAT *CompensationBreakup `bson:"mat" json:"mat"`
+	MEC *CompensationBreakup `bson:"mec" json:"mec"`
+	MET *CompensationBreakup `bson:"met" json:"met"`
+	MIN *CompensationBreakup `bson:"min" json:"min"`
+	MST *CompensationBreakup `bson:"mst" json:"mst"`
+	PHE *CompensationBreakup `bson:"phe" json:"phe"`
+	PHY *CompensationBreakup `bson:"phy" json:"phy"`
 }
 
 type CourseCompensationDetails struct {
-	BTech *BTechCompensation `bson:"BTECH" json:"BTECH"`
+	BTech *BTechCompensation `bson:"BTech" json:"BTech"`
 	IDD   *IDDCompensation   `bson:"IDD" json:"IDD"`
-	MTech *MTechCompensation `bson:"MTECH" json:"MTECH"`
-	PhD   *PhDCompensation   `bson:"PHD" json:"PHD"`
+	MTech *MTechCompensation `bson:"MTech" json:"MTech"`
+	PhD   *PhDCompensation   `bson:"PhD" json:"PhD"`
 }
 
 type CompanyProfile struct {
