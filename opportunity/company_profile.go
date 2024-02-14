@@ -33,8 +33,9 @@ type Deadlines struct {
 }
 
 type Compensation struct {
-	misc.Currency
-	CompensationType CompensationType `bson:"compensationType" json:"compensationType"`
+	Currency         misc.CurrencyType `json:"currency" bson:"currency"`
+	Amount           float64           `json:"amount" bson:"amount"`
+	CompensationType CompensationType  `bson:"compensationType" json:"compensationType"`
 }
 
 type CompensationRange struct {
