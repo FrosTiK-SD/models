@@ -134,6 +134,7 @@ type CourseCompensationDetails struct {
 
 type CompanyProfile struct {
 	Id                     primitive.ObjectID        `bson:"_id" json:"_id"`
+	Opportunity            primitive.ObjectID        `bson:"opportunity" json:"opportunity"`
 	Company                *primitive.ObjectID       `bson:"company" json:"company"`
 	Role                   *string                   `bson:"role" json:"role"`
 	Batch                  *string                   `bson:"batch" json:"batch"`
