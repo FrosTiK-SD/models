@@ -43,7 +43,7 @@ type ForumPost struct {
 }
 
 type ForumPostContent struct {
-	TopGenericContent    string               `bson:"topGenericContent,omitempty" json:"topGenericContent,omitempty"`
-	BottomGenericContent string               `bson:"bottomGenericContent,omitempty" json:"bottomGenericContent,omitempty"`
-	StudentList          []primitive.ObjectID `bson:"studentList,omitempty" json:"studentList,omitempty"`
+	TopGenericContent    string               `bson:"topGenericContent" json:"topGenericContent"`
+	BottomGenericContent string               `bson:"bottomGenericContent" json:"bottomGenericContent"`
+	StudentList          []primitive.ObjectID `bson:"studentList" json:"studentList"`
 }
