@@ -26,13 +26,13 @@ type NotifyForum struct {
 
 type ForumPost struct {
 	ID               primitive.ObjectID   `bson:"_id,omitempty" json:"_id,omitempty"`
-	Title            string               `bson:"title,omitempty" json:"title,omitempty"`
-	Type             ForumPostType        `bson:"type,omitempty" json:"type,omitempty"`
-	Tags             []string             `bson:"tags,omitempty" json:"tags,omitempty"`
-	RelatedCompanies []primitive.ObjectID `bson:"relatedCompanies,omitempty" json:"relatedCompanies,omitempty"`
-	Notify           NotifyForum          `bson:"notify,omitempty" json:"notify,omitempty"`
-	Content          []ForumPostContent   `bson:"content,omitempty" json:"content,omitempty"`
-	Pinned           int                  `bson:"pinned,omitempty" json:"pinned,omitempty"`
+	Title            string               `bson:"title" json:"title"`
+	Type             ForumPostType        `bson:"type" json:"type"`
+	Tags             []string             `bson:"tags" json:"tags"`
+	RelatedCompanies []primitive.ObjectID `bson:"relatedCompanies" json:"relatedCompanies"`
+	Notify           NotifyForum          `bson:"notify" json:"notify"`
+	Content          []ForumPostContent   `bson:"content" json:"content"`
+	Pinned           int                  `bson:"pinned" json:"pinned"`
 
 	// metadata
 	CreatedBy primitive.ObjectID   `bson:"createdBy,omitempty" json:"createdBy,omitempty"`
@@ -43,7 +43,7 @@ type ForumPost struct {
 }
 
 type ForumPostContent struct {
-	TopGenericContent    string               `bson:"topGenericContent,omitempty" json:"topGenericContent,omitempty"`
-	BottomGenericContent string               `bson:"bottomGenericContent,omitempty" json:"bottomGenericContent,omitempty"`
-	StudentList          []primitive.ObjectID `bson:"studentList,omitempty" json:"studentList,omitempty"`
+	TopGenericContent    string               `bson:"topGenericContent" json:"topGenericContent"`
+	BottomGenericContent string               `bson:"bottomGenericContent" json:"bottomGenericContent"`
+	StudentList          []primitive.ObjectID `bson:"studentList" json:"studentList"`
 }
