@@ -29,7 +29,7 @@ type Student struct {
 	PermanentAddress string               `json:"permanentAddress" bson:"permanentAddress"`
 	PresentAddress   string               `json:"presentAddress" bson:"presentAddress"`
 	PersonalEmail    string               `json:"personalEmail" bson:"personalEmail"`
-	Mobile           *string              `json:"mobile" bson:"mobile"`
+	Mobile           string               `json:"mobile" bson:"mobile"`
 	Category         *ReservationCategory `json:"category" bson:"category"`
 	MotherTongue     string               `json:"motherTongue" bson:"motherTongue"`
 	ParentsDetails   *ParentsDetails      `json:"parentsDetails" bson:"parentsDetails"`

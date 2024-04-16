@@ -12,8 +12,8 @@ type ReservationCategory struct {
 }
 
 type RankDetails struct {
-	Rank         int                 `bson:"rank" json:"rank"`
-	RankCategory ReservationCategory `bson:"rankCategory" json:"rankCategory"`
+	Rank         int                  `bson:"rank" json:"rank"`
+	RankCategory *ReservationCategory `bson:"rankCategory" json:"rankCategory"`
 }
 
 type SemesterSPI struct {
