@@ -32,7 +32,7 @@ type Student struct {
 	Mobile           string               `json:"mobile" bson:"mobile"`
 	Category         *ReservationCategory `json:"category" bson:"category"`
 	MotherTongue     string               `json:"motherTongue" bson:"motherTongue"`
-	ParentsDetails   *ParentsDetails      `json:"parentsDetails" bson:"parentsDetails"`
+	ParentsDetails   ParentsDetails       `json:"parentsDetails" bson:"parentsDetails"`
 
 	Academics      Academics        `json:"academics" bson:"academics"`
 	WorkExperience []WorkExperience `json:"workExperience" bson:"workExperience"`
