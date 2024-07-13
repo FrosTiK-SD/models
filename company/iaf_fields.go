@@ -3,9 +3,11 @@ package company
 type InternshipDescription struct {
 	Profile          string           `json:"profile" bson:"profile"`
 	Description      string           `json:"jd" bson:"jd"`
+	MinimumHires     int              `json:"minimumHires" bson:"minimumHires"`
 	ExpectedHires    int              `json:"expectedHires" bson:"expectedHires"`
 	DurationInWeeks  int              `json:"internshipDuration" bson:"internshipDuration"`
 	Locations        string           `json:"locations" bson:"locations"`
+	IsCGPACriteria   bool             `json:"isCGPACriteria" bson:"isCGPACriteria"`
 	EligibleCourses  []string         `json:"courses" bson:"courses"`
 	BTech            IAFCourseDetails `json:"btech" bson:"btech"`
 	IDD              IAFCourseDetails `json:"idd" bson:"idd"`
@@ -18,9 +20,11 @@ type InternshipDescription struct {
 type InternshipDescriptionCSV struct {
 	Profile          string              `json:"profile" bson:"profile" csv:"Profile"`
 	Description      string              `json:"jd" bson:"jd" csv:"Description"`
+	MinimumHires     string              `json:"minimumHires" bson:"minimumHires" csv:"Minimum Hires"`
 	ExpectedHires    string              `json:"expectedHires" bson:"expectedHires" csv:"Expected Hires"`
 	DurationInWeeks  string              `json:"internshipDuration" bson:"internshipDuration" csv:"Duration In Weeks"`
 	Locations        string              `json:"locations" bson:"locations" csv:"Locations"`
+	IsCGPACriteria   string              `json:"isCGPACriteria" bson:"isCGPACriteria" csv:"Is there a CGPA Criteria"`
 	EligibleCourses  string              `json:"courses" bson:"courses" csv:"Eligible Courses"`
 	BTech            IAFCourseDetailsCSV `json:"btech" bson:"btech" csv:"BTech ,inline"`
 	IDD              IAFCourseDetailsCSV `json:"idd" bson:"idd" csv:"IDD ,inline"`
@@ -45,6 +49,8 @@ type StipendDetails struct {
 	Accomodation    string `json:"accommodation" bson:"accommodation" csv:"Accomodation"`
 	RelocationBonus string `json:"relocationBonus" bson:"relocationBonus" csv:"Relocation Bonus"`
 	Incentives      string `json:"incentives" bson:"incentives" csv:"Incentives"`
+	ProvisionForPPO bool   `json:"provisionForPPO" bson:"provisionForPPO" csv:"PPO Provision on performance"`
+	TentativeCTC    string `json:"tentativeCTC" bson:"tentativeCTC" csv:"Tentative CTC on PPO"`
 }
 
 type StipendDetailsCSV struct {
@@ -52,4 +58,6 @@ type StipendDetailsCSV struct {
 	Accomodation    string `json:"accommodation" bson:"accommodation" csv:"Accomodation"`
 	RelocationBonus string `json:"relocationBonus" bson:"relocationBonus" csv:"Relocation Bonus"`
 	Incentives      string `json:"incentives" bson:"incentives" csv:"Incentives"`
+	ProvisionForPPO string `json:"provisionForPPO" bson:"provisionForPPO" csv:"PPO Provision on performance"`
+	TentativeCTC    string `json:"tentativeCTC" bson:"tentativeCTC" csv:"Tentative CTC on PPO"`
 }
