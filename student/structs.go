@@ -44,13 +44,6 @@ type EducationDetails struct {
 	Score         float64 `bson:"score" json:"score"`
 }
 
-type DiplomaDetails struct {
-	Board string `bson:"diploma_board" json:"diploma_board"`
-	Institute string `bson:"diploma_from" json:"diploma_from"`
-	Year int `bson:"diploma_year" json:"diploma_year"`
-	Percentage float64 `bson:"diploma_percentage" json:"diploma_percentage"`
-}
-
 type Academics struct {
 	JEERank        *RankDetails        `json:"jeeRank" bson:"jeeRank"`
 	GATERank       *RankDetails        `json:"gateRank" bson:"gateRank"`
@@ -59,7 +52,7 @@ type Academics struct {
 	UnderGraduate  *EducationDetails   `json:"underGraduate" bson:"underGraduate"`
 	Honours        *string             `json:"honours" bson:"honours"`
 	PostGraduate   *EducationDetails   `json:"postGraduate" bson:"postGraduate"`
-	Diploma		   *DiplomaDetails	   `json:"diploma" bson:"diploma"`
+	Diploma		   *EducationDetails   `json:"diploma" bson:"diploma"`
 	ThesisEndDate  *primitive.DateTime `json:"thesisEndDate" bson:"thesisEndDate"`
 	EducationGap   *int                `json:"educationGap" bson:"educationGap"`
 	SemesterSPI    SemesterSPI         `json:"semesterSPI" bson:"semesterSPI"`
