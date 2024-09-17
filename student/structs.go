@@ -52,6 +52,7 @@ type Academics struct {
 	UnderGraduate  *EducationDetails   `json:"underGraduate" bson:"underGraduate"`
 	Honours        *string             `json:"honours" bson:"honours"`
 	PostGraduate   *EducationDetails   `json:"postGraduate" bson:"postGraduate"`
+	Diploma	       *EducationDetails   `json:"diploma" bson:"diploma"`
 	ThesisEndDate  *primitive.DateTime `json:"thesisEndDate" bson:"thesisEndDate"`
 	EducationGap   *int                `json:"educationGap" bson:"educationGap"`
 	SemesterSPI    SemesterSPI         `json:"semesterSPI" bson:"semesterSPI"`
