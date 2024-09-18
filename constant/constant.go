@@ -1,6 +1,6 @@
 package constant
 
-const CurrentAcademicSession = S_2023_2024
+const CurrentAcademicSession = S_2024_2025
 
 var GenericEmailProviders = []string{"gmail.com", "outlook.com", "protonmail.com", "tutanota.com", "yahoo.com"}
 
