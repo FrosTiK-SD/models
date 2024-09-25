@@ -5,8 +5,9 @@ import (
 )
 
 type ProfileApplication struct {
-	Resume  string             `json:"resume" bson:"resume"` // Link to the resume
-	Profile primitive.ObjectID `json:"profile" bson:"profile"`
+	ResumeId   string             `json:"resumeId" bson:"resumeId"`
+	ResumeLink string             `json:"resumeLink" bson:"resumeLink"`
+	Profile    primitive.ObjectID `json:"profile" bson:"profile"`
 
 	// This is the submitted detais of the user on an CompanyProfile basis
 	DetailsRequested *map[string]interface{} `json:"detailsRequested" bson:"detailsRequested"`
