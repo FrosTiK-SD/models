@@ -12,11 +12,12 @@ const (
 )
 
 type Activity struct {
-	Id        primitive.ObjectID `json:"_id" bson:"_id"`
-	Type      ActivityType       `json:"type" bson:"type"`
-	Timestamp primitive.DateTime `json:"timestamp" bson:"timestamp"`
-	User      primitive.ObjectID `json:"user" bson:"user"`
-	Message   string             `json:"message" bson:"message"`
+	Id        primitive.ObjectID   `json:"_id" bson:"_id"`
+	Type      ActivityType         `json:"type" bson:"type"`
+	Timestamp primitive.DateTime   `json:"timestamp" bson:"timestamp"`
+	User      primitive.ObjectID   `json:"user" bson:"user"`
+	Message   string               `json:"message" bson:"message"`
+	Ref       *primitive.DBPointer `json:"ref" bson:"ref"`
 
 	// metadata
 	CreatedAt primitive.DateTime `bson:"createdAt" json:"createdAt"`

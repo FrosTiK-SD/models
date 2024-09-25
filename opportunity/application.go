@@ -14,8 +14,8 @@ type ProfileApplication struct {
 
 type Application struct {
 	ID          primitive.ObjectID   `bson:"_id" json:"_id"`
-	Opportunity primitive.ObjectID   `bson:"opportunity" json:"opportunity,omitempty"`
-	Student     primitive.ObjectID   `bson:"student" json:"student,omitempty"`
+	Opportunity primitive.ObjectID   `bson:"opportunity,omitempty" json:"opportunity"`
+	Student     primitive.ObjectID   `bson:"student,omitempty" json:"student"`
 	Profiles    []ProfileApplication `json:"profiles" bson:"profiles"`
 
 	Activities []primitive.ObjectID `json:"activities" bson:"activities"`
