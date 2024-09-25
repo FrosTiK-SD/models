@@ -17,4 +17,8 @@ type Activity struct {
 	Timestamp primitive.DateTime `json:"timestamp" bson:"timestamp"`
 	User      primitive.ObjectID `json:"user" bson:"user"`
 	Message   string             `json:"message" bson:"message"`
+
+	// metadata
+	CreatedAt primitive.DateTime `bson:"createdAt" json:"createdAt"`
+	UpdatedAt primitive.DateTime `bson:"updatedAt" json:"updatedAt"`
 }
