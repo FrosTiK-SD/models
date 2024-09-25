@@ -150,7 +150,7 @@ type CompanyProfile struct {
 	DetailsRequestedSchema *map[string]interface{}   `bson:"detailsRequestedSchema" json:"detailsRequestedSchema"`
 	ListingStatus          ListingStatus             `bson:"listingStatus" json:"listingStatus,omitempty"`
 	ListingType            ListingType               `bson:"listingType" json:"listingType,omitempty"`
-	Activities             []misc.Activity           `bson:"activities" json:"activities"`
+	Activities             []primitive.ObjectID      `bson:"activities" json:"activities"`
 	CreatedAt              primitive.DateTime        `bson:"createdAt" json:"createdAt"`
 	UpdatedAt              primitive.DateTime        `bson:"updatedAt" json:"updatedAt"`
 }
