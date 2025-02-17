@@ -4,6 +4,9 @@ import (
 	"time"
 
 	"go.mongodb.org/mongo-driver/bson/primitive"
+
+	constant "github.com/FrosTiK-SD/models/constant"
+
 )
 
 type Examination struct {
@@ -21,4 +24,5 @@ type Examination struct {
 	CreatedBy   primitive.ObjectID   `json:"createdBy" bson:"createdBy"`
 	WillingList []primitive.ObjectID `json:"willingList" bson:"willingList"`
 	IsActive    bool                 `json:"isActive" bson:"isActive"`
+	Session    constant.AcademicSession `json:"session" bson:"session"`
 }
