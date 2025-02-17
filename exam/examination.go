@@ -21,4 +21,5 @@ type Examination struct {
 	CreatedBy   primitive.ObjectID   `json:"createdBy" bson:"createdBy"`
 	WillingList []primitive.ObjectID `json:"willingList" bson:"willingList"`
 	IsActive    bool                 `json:"isActive" bson:"isActive"`
+	session    string                `json:"session" bson:"session"`
 }
