@@ -26,6 +26,7 @@ const (
 	OTHER                ForumPostType = "OTHER"
 
 	NOTICE_BOARD ForumSection = "NOTICE_BOARD"
+	FORUM        ForumSection = "FORUM"
 	EXPERIENCE   ForumSection = "EXPERIENCE"
 
 	PLACEMENT  ForumExperienceType = "PLACEMENT"
