@@ -11,6 +11,12 @@ type Student struct {
 	Id               primitive.ObjectID   `json:"_id" bson:"_id"`
 	Groups           []primitive.ObjectID `json:"groups" bson:"groups"`
 	CompaniesAlloted []string             `json:"companiesAlloted" bson:"companiesAlloted"`
+	IsInterned       bool                 `json:"isInterned" bson:"isInterned"`
+	InternCompany    string               `json:"internCompany" bson:"internCompany"`
+	HasPPO           bool                 `json:"hasPPO" bson:"hasPPO"`
+	PPOCompany       string               `json:"ppoCompany" bson:"ppoCompany"`
+	IsPlaced         bool                 `json:"isPlaced" bson:"isPlaced"`
+	PlacedCompany    string               `json:"placedCompany" bson:"placedCompany"`
 
 	Batch          *Batch           `json:"batch" bson:"batch"`
 	RollNo         int              `json:"rollNo" bson:"rollNo"`
