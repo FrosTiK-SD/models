@@ -28,10 +28,14 @@ type ForumPost struct {
 	ID               primitive.ObjectID   `bson:"_id,omitempty" json:"_id,omitempty"`
 	Title            string               `bson:"title" json:"title"`
 	Type             ForumPostType        `bson:"type" json:"type"`
+	Section          ForumSection         `bson:"section" json:"section"`
+	ExperienceType   ForumExperienceType  `bson:"experienceType,omitempty" json:"experienceType,omitempty"`
+	Session          string               `bson:"session,omitempty" json:"session,omitempty"`
 	Tags             []string             `bson:"tags" json:"tags"`
 	RelatedCompanies []primitive.ObjectID `bson:"relatedCompanies" json:"relatedCompanies"`
 	Notify           NotifyForum          `bson:"notify" json:"notify"`
 	Content          []ForumPostContent   `bson:"content" json:"content"`
+	Comments         []ForumComment       `bson:"comments" json:"comments"`
 	Pinned           int                  `bson:"pinned" json:"pinned"`
 
 	// metadata
@@ -40,6 +44,15 @@ type ForumPost struct {
 	CreatedAt primitive.DateTime   `bson:"createdAt,omitempty" json:"createdAt,omitempty"`
 	UpdatedAt primitive.DateTime   `bson:"updatedAt,omitempty" json:"updatedAt,omitempty"`
 	RawText   string               `bson:"rawText,omitempty" json:"rawText,omitempty"`
+}
+
+type ForumComment struct {
+	ID            primitive.ObjectID `bson:"_id" json:"_id"`
+	Body          string             `bson:"body" json:"body"`
+	CreatedBy     primitive.ObjectID `bson:"createdBy" json:"createdBy"`
+	CreatedByName string             `bson:"createdByName" json:"createdByName"`
+	CreatedAt     primitive.DateTime `bson:"createdAt" json:"createdAt"`
+	UpdatedAt     primitive.DateTime `bson:"updatedAt" json:"updatedAt"`
 }
 
 type ForumPostContent struct {

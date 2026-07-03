@@ -2,6 +2,8 @@ package forum
 
 type ForumPostContentType string
 type ForumPostType string
+type ForumSection string
+type ForumExperienceType string
 
 const (
 	// ForumPostContentType
@@ -22,4 +24,10 @@ const (
 	INTERVIEW_EXPERIENCE ForumPostType = "INTERVIEW_EXPERIENCE"
 	TEST_EXPERIENCE      ForumPostType = "TEST_EXPERIENCE"
 	OTHER                ForumPostType = "OTHER"
+
+	NOTICE_BOARD ForumSection = "NOTICE_BOARD"
+	EXPERIENCE   ForumSection = "EXPERIENCE"
+
+	PLACEMENT  ForumExperienceType = "PLACEMENT"
+	INTERNSHIP ForumExperienceType = "INTERNSHIP"
 )
