@@ -60,8 +60,7 @@ type BTechCompensation struct {
 	MEC *CompensationBreakup `bson:"mec" json:"mec"`
 	MET *CompensationBreakup `bson:"met" json:"met"`
 	MIN *CompensationBreakup `bson:"min" json:"min"`
-	MST *CompensationBreakup `bson:"mst" json:"mst"`
-	PHY *CompensationBreakup `bson:"phy" json:"phy"`
+	PHE *CompensationBreakup `bson:"phe" json:"phe"`
 }
 
 type IDDCompensation struct {
