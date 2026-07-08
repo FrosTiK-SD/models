@@ -1,6 +1,8 @@
 package opportunity
 
 import (
+	"encoding/json"
+
 	"github.com/FrosTiK-SD/models/misc"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
@@ -129,6 +131,37 @@ type CourseCompensationDetails struct {
 	IDD   *IDDCompensation   `bson:"IDD" json:"IDD"`
 	MTech *MTechCompensation `bson:"MTech" json:"MTech"`
 	PhD   *PhDCompensation   `bson:"PhD" json:"PhD"`
+}
+
+func (c *CourseCompensationDetails) UnmarshalJSON(data []byte) error {
+	type courseCompensationDetailsAlias CourseCompensationDetails
+	var raw struct {
+		courseCompensationDetailsAlias
+		BTechLower *BTechCompensation `json:"btech"`
+		IDDLower   *IDDCompensation   `json:"idd"`
+		MTechLower *MTechCompensation `json:"mtech"`
+		PhDLower   *PhDCompensation   `json:"phd"`
+	}
+
+	if err := json.Unmarshal(data, &raw); err != nil {
+		return err
+	}
+
+	*c = CourseCompensationDetails(raw.courseCompensationDetailsAlias)
+	if c.BTech == nil {
+		c.BTech = raw.BTechLower
+	}
+	if c.IDD == nil {
+		c.IDD = raw.IDDLower
+	}
+	if c.MTech == nil {
+		c.MTech = raw.MTechLower
+	}
+	if c.PhD == nil {
+		c.PhD = raw.PhDLower
+	}
+
+	return nil
 }
 
 type CompanyProfile struct {
