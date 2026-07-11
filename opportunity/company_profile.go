@@ -57,6 +57,7 @@ type BTechCompensation struct {
 	CHE *CompensationBreakup `bson:"che" json:"che"`
 	CIV *CompensationBreakup `bson:"civ" json:"civ"`
 	CSE *CompensationBreakup `bson:"cse" json:"cse"`
+	DSE *CompensationBreakup `bson:"dse" json:"dse"`
 	ECE *CompensationBreakup `bson:"ece" json:"ece"`
 	EEE *CompensationBreakup `bson:"eee" json:"eee"`
 	MEC *CompensationBreakup `bson:"mec" json:"mec"`
@@ -73,6 +74,7 @@ type IDDCompensation struct {
 	CHY *CompensationBreakup `bson:"chy" json:"chy"`
 	CIV *CompensationBreakup `bson:"civ" json:"civ"`
 	CSE *CompensationBreakup `bson:"cse" json:"cse"`
+	DSE *CompensationBreakup `bson:"dse" json:"dse"`
 	ECE *CompensationBreakup `bson:"ece" json:"ece"`
 	EEE *CompensationBreakup `bson:"eee" json:"eee"`
 	MAT *CompensationBreakup `bson:"mat" json:"mat"`
