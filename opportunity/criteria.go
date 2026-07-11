@@ -11,8 +11,7 @@ type Criteria struct {
 	X              float64                               `bson:"x" json:"x"`
 	XII            float64                               `bson:"xii" json:"xii"`
 	Cgpa           float64                               `bson:"cgpa" json:"cgpa"`
-	Branches       []constant.Branch                     `bson:"branches" json:"branches"`
-	CourseBranches map[constant.Course][]constant.Branch `bson:"courseBranches,omitempty" json:"courseBranches,omitempty"`
+	CourseBranches map[constant.Course][]constant.Branch `bson:"courseBranches" json:"courseBranches"`
 	ActiveBacklogs *int                                  `bson:"activeBacklogs" json:"activeBacklogs"`
 	TotalBacklogs  *int                                  `bson:"totalBacklogs" json:"totalBacklogs"`
 	Gender         []constant.Gender                     `bson:"gender" json:"gender"`
