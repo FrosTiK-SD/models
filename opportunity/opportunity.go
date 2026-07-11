@@ -8,6 +8,8 @@ import (
 type Opportunity struct {
 	ID                     primitive.ObjectID      `bson:"_id" json:"_id,omitempty"`
 	Company                primitive.ObjectID      `bson:"company" json:"company,omitempty"`
+	CompanyName            *string                 `bson:"companyName" json:"companyName,omitempty"`
+	CompanyLogo            *[]string               `bson:"companyLogo" json:"companyLogo,omitempty"`
 	Profiles               []primitive.ObjectID    `bson:"profiles" json:"profiles,omitempty"`
 	DetailsRequestedSchema *map[string]interface{} `bson:"detailsRequestedSchema" json:"detailsRequestedSchema"`
 	Attachments            []misc.Attachment       `bson:"attachments" json:"attachments,omitempty"`
