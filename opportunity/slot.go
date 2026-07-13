@@ -4,7 +4,9 @@ import "go.mongodb.org/mongo-driver/bson/primitive"
 
 type Slot struct {
 	ID                  primitive.ObjectID `bson:"_id" json:"_id,omitempty"`
-	Day                 primitive.DateTime `bson:"day" json:"day,omitempty"`
+	Session             string             `bson:"session" json:"session,omitempty"`
+	Type                string             `bson:"type" json:"type,omitempty"`
+	Day                 string             `bson:"day" json:"day,omitempty"`
 	StartDate           primitive.DateTime `bson:"start_date" json:"start_date,omitempty"`
 	EndDate             primitive.DateTime `bson:"end_date" json:"end_date,omitempty"`
 	SlotName            string             `bson:"name" json:"name,omitempty"`
