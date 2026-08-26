@@ -109,6 +109,7 @@ type MTechCompensation struct {
 
 type MScCompensation struct {
 	CHY *CompensationBreakup `bson:"chy" json:"chy"`
+	PHY *CompensationBreakup `bson:"phy" json:"phy"`
 }
 
 type PhDCompensation struct {
