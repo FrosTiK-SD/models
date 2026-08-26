@@ -107,6 +107,11 @@ type MTechCompensation struct {
 	PHY *CompensationBreakup `bson:"phy" json:"phy"`
 }
 
+type MScCompensation struct {
+	CHY *CompensationBreakup `bson:"chy" json:"chy"`
+	PHY *CompensationBreakup `bson:"phy" json:"phy"`
+}
+
 type PhDCompensation struct {
 	APD *CompensationBreakup `bson:"apd" json:"apd"`
 	BCE *CompensationBreakup `bson:"bce" json:"bce"`
@@ -132,6 +137,7 @@ type CourseCompensationDetails struct {
 	BTech *BTechCompensation `bson:"BTech" json:"BTech"`
 	IDD   *IDDCompensation   `bson:"IDD" json:"IDD"`
 	MTech *MTechCompensation `bson:"MTech" json:"MTech"`
+	MSc   *MScCompensation   `bson:"MSc" json:"MSc"`
 	PhD   *PhDCompensation   `bson:"PhD" json:"PhD"`
 }
 
@@ -142,6 +148,7 @@ func (c *CourseCompensationDetails) UnmarshalJSON(data []byte) error {
 		BTechLower *BTechCompensation `json:"btech"`
 		IDDLower   *IDDCompensation   `json:"idd"`
 		MTechLower *MTechCompensation `json:"mtech"`
+		MScLower   *MScCompensation   `json:"msc"`
 		PhDLower   *PhDCompensation   `json:"phd"`
 	}
 
@@ -158,6 +165,9 @@ func (c *CourseCompensationDetails) UnmarshalJSON(data []byte) error {
 	}
 	if c.MTech == nil {
 		c.MTech = raw.MTechLower
+	}
+	if c.MSc == nil {
+		c.MSc = raw.MScLower
 	}
 	if c.PhD == nil {
 		c.PhD = raw.PhDLower
